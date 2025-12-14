@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grew Energy Pvt Limited</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-green: #4CAF50;
+            --light-green: #E8F5E9;
+            --dark-green: #388E3C;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        /* Header and Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .company-name {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
+            background-color: var(--light-green);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .nav-item {
+            padding: 18px 30px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .nav-item:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+        
+        .nav-item.active {
+            background-color: var(--dark-green);
+            color: var(--white);
+        }
+        
+        .nav-item i {
+            margin-right: 8px;
+        }
+        
+        .nav-arrow {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 50px;
+            background-color: rgba(76, 175, 80, 0.8);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5rem;
+        }
+        
+        .nav-arrow.left {
+            left: 0;
+        }
+        
+        .nav-arrow.right {
+            right: 0;
+        }
+        
+        /* Lightning Effect */
+        .lightning {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        
+        .lightning-flash {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 40px 20px rgba(255, 255, 255, 0.8);
+            animation: flash 0.5s ease-out;
+        }
+        
+        @keyframes flash {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Page Content */
+        .page-content {
+            display: none;
+            margin-top: 130px;
+            padding: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-green);
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-green);
+        }
+        
+        /* Home Page Photo Gallery */
+        .gallery-container {
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-slider {
+            display: flex;
+            transition: transform 0.8s ease;
+            height: 500px;
+        }
+        
+        .gallery-slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            color: var(--white);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .slide-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 70%;
+        }
+        
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .gallery-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--light-green);
+            margin: 0 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .gallery-dot.active {
+            background-color: var(--dark-green);
+        }
+        
+        /* Page Content Styles */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(to right, var(--light-green), var(--white));
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-header h1 {
+            color: var(--dark-green);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .content-card {
+            background-color: var(--light-green);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .content-card h3 {
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .content-card h3 i {
+            margin-right: 10px;
+            color: var(--primary-green);
+        }
+        
+        .content-card ul {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+        
+        .content-card li {
+            margin-bottom: 8px;
+        }
+        
+        /* HR Department Specific */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid var(--light-green);
+        }
+        
+        /* Admin Specific */
+        .admin-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 25px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            min-width: 200px;
+            margin: 10px;
+        }
+        
+        .stat-box h3 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+        
+        /* Live Chat Specific */
+        .chat-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .chat-messages {
+            height: 400px;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 18px;
+            border-radius: 20px;
+            max-width: 70%;
+        }
+        
+        .message.received {
+            background-color: var(--light-green);
+            align-self: flex-start;
+        }
+        
+        .message.sent {
+            background-color: var(--primary-green);
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 20px;
+            background-color: var(--white);
+            border-top: 1px solid #eee;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+        
+        .chat-input button {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        /* Form and Company Details */
+        .form-details-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-green);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-green);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-green);
+            outline: none;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--dark-green);
+        }
+        
+        .company-details {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid var(--primary-green);
+        }
+        
+        .company-details h3 {
+            color: var(--dark-green);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .detail-item i {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 40px 20px 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-green);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--white);
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-green);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .company-name {
+                font-size: 1.5rem;
+                padding: 12px 0;
+            }
+            
+            .nav-item {
+                padding: 15px 20px;
+                font-size: 1rem;
+            }
+            
+            .page-content {
+                margin-top: 120px;
+            }
+            
+            .gallery-slide {
+                padding: 20px;
+                height: 400px;
+            }
+            
+            .slide-content {
+                max-width: 90%;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .nav-item {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-item i {
+                margin-right: 5px;
+            }
+            
+            .gallery-slide {
+                height: 300px;
+                padding: 15px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .form-details-container {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Lightning Effect Container -->
+    <div class="lightning" id="lightning"></div>
+    
+    <!-- Header with Moving Navigation -->
+    <header>
+        <div class="company-name">Grew Energy Pvt Limited</div>
+        <div class="nav-container">
+            <div class="nav-arrow left" id="navLeft"><i class="fas fa-chevron-left"></i></div>
+            <div class="nav-slider" id="navSlider">
+                <a class="nav-item active" data-page="home"><i class="fas fa-home"></i> Home</a>
+                <a class="nav-item" data-page="hr"><i class="fas fa-users"></i> HR Department</a>
+                <a class="nav-item" data-page="admin"><i class="fas fa-user-tie"></i> Admin</a>
+                <a class="nav-item" data-page="chat"><i class="fas fa-comments"></i> Live Chat</a>
+            </div>
+            <div class="nav-arrow right" id="navRight"><i class="fas fa-chevron-right"></i></div>
+        </div>
+    </header>
+
+    <!-- Home Page Content -->
+    <section id="home-page" class="page-content active">
+        <!-- Photo Gallery -->
+        <h2 class="section-title">Our Energy Solutions</h2>
+        <div class="gallery-container">
+            <div class="gallery-slider" id="gallerySlider">
+                <div class="gallery-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+                    <div class="slide-content">
+                        <h3>Solar Power Generation</h3>
+                        <p>Harnessing the power of the sun to create clean, renewable energy for a sustainable future.</p>
+                    </div>
+                </div>
+                <div class="gallery-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+                    <div class="slide-content">
+                        <h3>Wind Energy Farms</h3>
+                        <p>Utilizing wind turbines to generate electricity with zero carbon emissions.</p>
+                    </div>
+                </div>
+                <div class="gallery-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80')">
+                    <div class="slide-content">
+                        <h3>Hydroelectric Power</h3>
+                        <p>Generating electricity from flowing water, a reliable and renewable energy source.</p>
+                    </div>
+                </div>
+                <div class="gallery-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558449028-b53a39d10009?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+                    <div class="slide-content">
+                        <h3>Energy Storage Solutions</h3>
+                        <p>Advanced battery technology to store renewable energy for consistent power supply.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-controls" id="galleryDots">
+            <!-- Dots will be added by JavaScript -->
+        </div>
+        
+        <!-- Form and Company Details -->
+        <h2 class="section-title">Contact Us</h2>
+        <div class="form-details-container">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Get In Touch</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" class="form-control" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="solar">Solar Solutions</option>
+                            <option value="wind">Wind Energy</option>
+                            <option value="career">Career Opportunities</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            
+            <!-- Company Details -->
+            <div class="company-details">
+                <h3>Company Information</h3>
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Head Office Address</h4>
+                        <p>123 Green Energy Park, Eco City,<br>Solar State, 560001, India</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Contact Numbers</h4>
+                        <p>+91 98765 43210<br>+91 98765 43211 (HR Dept)</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Address</h4>
+                        <p>info@grewenergy.com<br>hr@grewenergy.com</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-bolt"></i>
+                    <div>
+                        <h4>Our Mission</h4>
+                        <p>To provide sustainable and affordable clean energy solutions for a greener tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HR Department Page Content -->
+    <section id="hr-page" class="page-content">
+        <div class="page-header">
+            <h1><i class="fas fa-users"></i> HR Department</h1>
+            <p>Managing our most valuable asset - our people. We're committed to fostering a diverse, inclusive, and empowering work environment.</p>
+        </div>
+        
+        <div class="content-grid">
+            <div class="content-card">
+                <h3><i class="fas fa-bullseye"></i> Our HR Mission</h3>
+                <p>To attract, develop, and retain top talent while creating an engaging workplace culture that drives innovation and sustainable growth.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3><i class="fas fa-graduation-cap"></i> Career Development</h3>
+                <p>We invest in our employees' growth through continuous learning opportunities, mentorship programs, and clear career pathways.</p>
+                <ul>
+                    <li>Leadership Training Programs</li>
+                    <li>Technical Skill Development</li>
+                    <li>Cross-Functional Rotations</li>
+                    <li>Tuition Reimbursement</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3><i class="fas fa-heart"></i> Employee Benefits</h3>
+                <p>Comprehensive benefits package designed to support our employees' wellbeing and work-life balance.</p>
+                <ul>
+                    <li>Health & Wellness Programs</li>
+                    <li>Flexible Working Hours</li>
+                    <li>Parental Leave Policy</li>
+                    <li>Retirement Planning</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Meet Our HR Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="HR Director">
+                <h3>Sarah Johnson</h3>
+                <p>HR Director</p>
+                <p>15+ years experience in human resources management</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80" alt="Talent Acquisition Manager">
+                <h3>Michael Chen</h3>
+                <p>Talent Acquisition Manager</p>
+                <p>Specializes in renewable energy recruitment</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1361&q=80" alt="Learning & Development Head">
+                <h3>Priya Sharma</h3>
+                <p>Learning & Development Head</p>
+                <p>Passionate about employee growth and skill development</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Page Content -->
+    <section id="admin-page" class="page-content">
+        <div class="page-header">
+            <h1><i class="fas fa-user-tie"></i> Administration Department</h1>
+            <p>Ensuring operational excellence and efficient management of resources to support Grew Energy's mission and growth.</p>
+        </div>
+        
+        <div class="admin-stats">
+            <div class="stat-box">
+                <h3>250+</h3>
+                <p>Employees</p>
+            </div>
+            <div class="stat-box">
+                <h3>15</h3>
+                <p>Countries of Operation</p>
+            </div>
+            <div class="stat-box">
+                <h3>₹500Cr+</h3>
+                <p>Annual Revenue</p>
+            </div>
+            <div class="stat-box">
+                <h3>45+</h3>
+                <p>Projects Completed</p>
+            </div>
+        </div>
+        
+        <div class="content-grid">
+            <div class="content-card">
+                <h3><i class="fas fa-cogs"></i> Operational Management</h3>
+                <p>Streamlining processes and implementing efficient systems to ensure smooth day-to-day operations across all departments.</p>
+                <ul>
+                    <li>Facility Management</li>
+                    <li>Supply Chain Optimization</li>
+                    <li>Vendor Relationship Management</li>
+                    <li>Process Improvement Initiatives</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3><i class="fas fa-chart-line"></i> Strategic Planning</h3>
+                <p>Developing and implementing long-term strategies to support business growth and sustainability objectives.</p>
+                <ul>
+                    <li>Annual Budget Planning</li>
+                    <li>Resource Allocation</li>
+                    <li>Growth Strategy Development</li>
+                    <li>Performance Monitoring</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3><i class="fas fa-shield-alt"></i> Compliance & Governance</h3>
+                <p>Ensuring adherence to regulatory requirements and maintaining high standards of corporate governance.</p>
+                <ul>
+                    <li>Regulatory Compliance</li>
+                    <li>Risk Management</li>
+                    <li>Internal Audits</li>
+                    <li>Corporate Governance</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Administration Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Chief Administrative Officer">
+                <h3>Robert Williams</h3>
+                <p>Chief Administrative Officer</p>
+                <p>Oversees all administrative functions</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Operations Director">
+                <h3>Lisa Anderson</h3>
+                <p>Operations Director</p>
+                <p>Manages day-to-day operational activities</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Compliance Officer">
+                <h3>David Miller</h3>
+                <p>Compliance Officer</p>
+                <p>Ensures regulatory compliance across operations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Chat Page Content -->
+    <section id="chat-page" class="page-content">
+        <div class="page-header">
+            <h1><i class="fas fa-comments"></i> Live Chat Support</h1>
+            <p>Get instant assistance from our customer support team. We're here to help with any questions about our services, products, or projects.</p>
+        </div>
+        
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2><i class="fas fa-headset"></i> Grew Energy Support</h2>
+                <p>We typically reply within 5 minutes</p>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message received">
+                    <p>Hello! Welcome to Grew Energy Support. How can I assist you today?</p>
+                    <span class="message-time">10:00 AM</span>
+                </div>
+                
+                <div class="message sent">
+                    <p>Hi, I'm interested in solar panel installation for my home.</p>
+                    <span class="message-time">10:02 AM</span>
+                </div>
+                
+                <div class="message received">
+                    <p>Great! We have several residential solar solutions. Could you tell me your approximate roof area and location?</p>
+                    <span class="message-time">10:03 AM</span>
+                </div>
+                
+                <div class="message sent">
+                    <p>My roof is about 1500 sq ft and I'm in Bangalore.</p>
+                    <span class="message-time">10:04 AM</span>
+                </div>
+                
+                <div class="message received">
+                    <p>Perfect! For that area, we recommend our 5kW solar system which can generate approximately 20-25 units per day. Would you like me to connect you with our solar consultant?</p>
+                    <span class="message-time">10:05 AM</span>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message here...">
+                <button id="sendMessage"><i class="fas fa-paper-plane"></i> Send</button>
+            </div>
+        </div>
+        
+        <div class="content-grid" style="margin-top: 50px;">
+            <div class="content-card">
+                <h3><i class="fas fa-clock"></i> Support Hours</h3>
+                <p>Our live chat is available during business hours:</p>
+                <ul>
+                    <li>Monday-Friday: 9 AM - 8 PM</li>
+                    <li>Saturday: 10 AM - 6 PM</li>
+                    <li>Sunday: 10 AM - 4 PM</li>
+                </ul>
+                <p>Outside these hours, you can leave a message and we'll respond when we reopen.</p>
+            </div>
+            
+            <div class="content-card">
+                <h3><i class="fas fa-question-circle"></i> Common Topics</h3>
+                <p>Quick answers to frequently asked questions:</p>
+                <ul>
+                    <li>Solar Panel Installation Process</li>
+                    <li>Government Subsidies & Incentives</li>
+                    <li>Maintenance & Warranty</li>
+                    <li>Payment Options</li>
+                    <li>Project Timeline</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h3><i class="fas fa-phone-alt"></i> Other Contact Methods</h3>
+                <p>If you prefer other ways to contact us:</p>
+                <ul>
+                    <li>Phone: +91 98765 43210</li>
+                    <li>Email: support@grewenergy.com</li>
+                    <li>Office Visit: By appointment only</li>
+                    <li>Social Media: @GrewEnergy</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Grew Energy Pvt Limited</h3>
+                <p>Leading the transition to clean, renewable energy with innovative solutions and sustainable practices.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home" class="footer-nav" data-page="home">Home</a></li>
+                    <li><a href="#hr" class="footer-nav" data-page="hr">HR Department</a></li>
+                    <li><a href="#admin" class="footer-nav" data-page="admin">Admin</a></li>
+                    <li><a href="#chat" class="footer-nav" data-page="chat">Live Chat</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li>Solar Power Installation</li>
+                    <li>Wind Energy Solutions</li>
+                    <li>Energy Storage Systems</li>
+                    <li>Energy Consulting</li>
+                    <li>Maintenance & Support</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest updates on renewable energy.</p>
+                <div class="form-group" style="margin-top: 15px;">
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                    <button class="submit-btn" style="margin-top: 10px;">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Grew Energy Pvt Limited. All Rights Reserved. | Designed for a Sustainable Future
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Slider Functionality
+        const navSlider = document.getElementById('navSlider');
+        const navLeft = document.getElementById('navLeft');
+        const navRight = document.getElementById('navRight');
+        const navItems = document.querySelectorAll('.nav-item');
+        let currentNavIndex = 0;
+        const totalNavItems = navItems.length;
+        
+        // Calculate the width of navigation items to determine scroll amount
+        const navItemWidth = navItems[0].offsetWidth;
+        
+        // Navigation arrows functionality
+        navLeft.addEventListener('click', () => {
+            if (currentNavIndex > 0) {
+                currentNavIndex--;
+                updateNavPosition();
+            }
+        });
+        
+        navRight.addEventListener('click', () => {
+            if (currentNavIndex < totalNavItems - 1) {
+                currentNavIndex++;
+                updateNavPosition();
+            }
+        });
+        
+        function updateNavPosition() {
+            // Calculate the new transform value
+            const translateX = -currentNavIndex * navItemWidth;
+            navSlider.style.transform = `translateX(${translateX}px)`;
+        }
+        
+        // Page Navigation with Lightning Effect
+        const pages = document.querySelectorAll('.page-content');
+        const lightningContainer = document.getElementById('lightning');
+        
+        // Function to create lightning effect
+        function createLightningEffect(x, y) {
+            // Clear any existing lightning
+            lightningContainer.innerHTML = '';
+            
+            // Create multiple lightning flashes
+            for (let i = 0; i < 3; i++) {
+                const flash = document.createElement('div');
+                flash.classList.add('lightning-flash');
+                
+                // Randomize position slightly
+                const offsetX = Math.random() * 100 - 50;
+                const offsetY = Math.random() * 100 - 50;
+                
+                // Set position and size
+                flash.style.left = `${x + offsetX}px`;
+                flash.style.top = `${y + offsetY}px`;
+                flash.style.width = `${30 + Math.random() * 70}px`;
+                flash.style.height = flash.style.width;
+                
+                // Add to container
+                lightningContainer.appendChild(flash);
+                
+                // Remove after animation completes
+                setTimeout(() => {
+                    if (flash.parentNode === lightningContainer) {
+                        lightningContainer.removeChild(flash);
+                    }
+                }, 500);
+            }
+            
+            // Show lightning container
+            lightningContainer.style.opacity = '1';
+            
+            // Hide after animation
+            setTimeout(() => {
+                lightningContainer.style.opacity = '0';
+            }, 500);
+        }
+        
+        // Function to switch page
+        function switchPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(`${pageId}-page`).classList.add('active');
+            
+            // Update active nav item
+            navItems.forEach(item => {
+                if (item.getAttribute('data-page') === pageId) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Scroll to top of page
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Add click event to navigation items
+        navItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                const pageId = this.getAttribute('data-page');
+                
+                // Create lightning effect at click location
+                createLightningEffect(e.clientX, e.clientY);
+                
+                // Switch page after a small delay to show lightning effect
+                setTimeout(() => {
+                    switchPage(pageId);
+                }, 300);
+            });
+        });
+        
+        // Add click event to footer navigation links
+        document.querySelectorAll('.footer-nav').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                
+                // Create lightning effect at click location
+                createLightningEffect(e.clientX, e.clientY);
+                
+                // Switch page after a small delay to show lightning effect
+                setTimeout(() => {
+                    switchPage(pageId);
+                }, 300);
+            });
+        });
+        
+        // Photo Gallery Functionality
+        const gallerySlider = document.getElementById('gallerySlider');
+        const galleryDotsContainer = document.getElementById('galleryDots');
+        const slides = document.querySelectorAll('.gallery-slide');
+        const totalSlides = slides.length;
+        let currentSlide = 0;
+        let slideInterval;
+        
+        // Create dots for gallery
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('gallery-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            galleryDotsContainer.appendChild(dot);
+        }
+        
+        const dots = document.querySelectorAll('.gallery-dot');
+        
+        // Function to go to a specific slide
+        function goToSlide(n) {
+            currentSlide = n;
+            updateGallery();
+        }
+        
+        // Function to update gallery position and active dot
+        function updateGallery() {
+            gallerySlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // Function to move to next slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateGallery();
+        }
+        
+        // Start automatic sliding
+        function startSlideShow() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        // Stop automatic sliding when user interacts with gallery
+        gallerySlider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        gallerySlider.addEventListener('mouseleave', startSlideShow);
+        
+        // Initialize gallery
+        updateGallery();
+        startSlideShow();
+        
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            
+            // Create lightning effect at form location
+            const formRect = this.getBoundingClientRect();
+            createLightningEffect(formRect.left + formRect.width/2, formRect.top + formRect.height/2);
+            
+            // Show success message
+            setTimeout(() => {
+                alert(`Thank you ${name}! Your message has been received. We will contact you at ${email} regarding ${subject}.`);
+                
+                // Reset form
+                this.reset();
+            }, 500);
+        });
+        
+        // Live Chat Functionality
+        document.getElementById('sendMessage').addEventListener('click', function() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                // Add user message to chat
+                const messagesContainer = document.getElementById('chatMessages');
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'sent');
+                
+                const now = new Date();
+                const timeString = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+                
+                messageDiv.innerHTML = `
+                    <p>${message}</p>
+                    <span class="message-time">${timeString}</span>
+                `;
+                
+                messagesContainer.appendChild(messageDiv);
+                
+                // Clear input
+                input.value = '';
+                
+                // Scroll to bottom
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                
+                // Create lightning effect at send button
+                const buttonRect = this.getBoundingClientRect();
+                createLightningEffect(buttonRect.left + buttonRect.width/2, buttonRect.top + buttonRect.height/2);
+                
+                // Simulate bot response after delay
+                setTimeout(() => {
+                    const botResponses = [
+                        "Thanks for your message. Our team will get back to you shortly.",
+                        "I've noted your query. Is there anything else I can help with?",
+                        "That's a great question! Let me connect you with a specialist.",
+                        "We appreciate your interest in Grew Energy. One of our representatives will contact you soon."
+                    ];
+                    
+                    const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+                    
+                    const botMessageDiv = document.createElement('div');
+                    botMessageDiv.classList.add('message', 'received');
+                    
+                    const botTime = new Date();
+                    const botTimeString = `${botTime.getHours()}:${botTime.getMinutes().toString().padStart(2, '0')}`;
+                    
+                    botMessageDiv.innerHTML = `
+                        <p>${randomResponse}</p>
+                        <span class="message-time">${botTimeString}</span>
+                    `;
+                    
+                    messagesContainer.appendChild(botMessageDiv);
+                    
+                    // Scroll to bottom
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                }, 1000);
+            }
+        });
+        
+        // Allow sending message with Enter key
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('sendMessage').click();
+            }
+        });
+        
+        // Adjust navigation on window resize
+        window.addEventListener('resize', updateNavPosition);
+    </script>
+</body>
+</html>

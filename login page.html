@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grew Energy - Admin Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-green: #4CAF50;
+            --light-green: #E8F5E9;
+            --dark-green: #388E3C;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        /* Lightning Effect */
+        .lightning {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        
+        .lightning-flash {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 40px 20px rgba(255, 255, 255, 0.8);
+            animation: flash 0.5s ease-out;
+        }
+        
+        @keyframes flash {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Login Container */
+        .login-container {
+            width: 100%;
+            max-width: 420px;
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            animation: slideUp 0.6s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Company Header */
+        .company-header {
+            background: linear-gradient(to right, var(--dark-green), var(--primary-green));
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .company-header:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes float {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .company-logo {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .company-logo i {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: var(--white);
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .company-tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        /* Login Form */
+        .login-form {
+            padding: 40px 30px;
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-green);
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .form-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-green);
+        }
+        
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-green);
+            display: flex;
+            align-items: center;
+        }
+        
+        .form-group label i {
+            margin-right: 10px;
+            color: var(--primary-green);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 45px 14px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background-color: var(--white);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+        }
+        
+        .form-control.valid {
+            border-color: var(--primary-green);
+        }
+        
+        .form-control.invalid {
+            border-color: #f44336;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 40px;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        .password-toggle:hover {
+            color: var(--primary-green);
+        }
+        
+        /* Form Actions */
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 8px;
+        }
+        
+        .remember-me label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .forgot-password {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .forgot-password:hover {
+            color: var(--dark-green);
+            text-decoration: underline;
+        }
+        
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(to right, var(--primary-green), var(--dark-green));
+            color: var(--white);
+            border: none;
+            padding: 16px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .submit-btn i {
+            transition: transform 0.3s;
+        }
+        
+        .submit-btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Login Footer */
+        .login-footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .login-footer a {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Error Message */
+        .error-message {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            align-items: center;
+            gap: 10px;
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        .error-message.show {
+            display: flex;
+        }
+        
+        /* Success Message */
+        .success-message {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .success-message.show {
+            display: flex;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .login-container {
+                max-width: 100%;
+            }
+            
+            .company-header {
+                padding: 25px 15px;
+            }
+            
+            .company-logo i {
+                font-size: 3rem;
+            }
+            
+            .company-name {
+                font-size: 1.5rem;
+            }
+            
+            .login-form {
+                padding: 30px 20px;
+            }
+            
+            .form-actions {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Lightning Effect Container -->
+    <div class="lightning" id="lightning"></div>
+    
+    <!-- Login Container -->
+    <div class="login-container">
+        <!-- Company Header -->
+        <div class="company-header">
+            <div class="company-logo">
+                <i class="fas fa-leaf"></i>
+                <h1 class="company-name">Grew Energy Pvt Limited</h1>
+                <p class="company-tagline">Powering a Sustainable Future</p>
+            </div>
+        </div>
+        
+        <!-- Login Form -->
+        <form class="login-form" id="loginForm">
+            <h2 class="form-title"><i class="fas fa-lock"></i> Admin Login</h2>
+            
+            <!-- Error Message -->
+            <div class="error-message" id="errorMessage">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="errorText">Invalid username or password. Please try again.</span>
+            </div>
+            
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i>
+                <span>Login successful! Redirecting to admin panel...</span>
+            </div>
+            
+            <!-- Username Field -->
+            <div class="form-group">
+                <label for="username"><i class="fas fa-user"></i> Username / Email</label>
+                <input type="email" id="username" class="form-control" placeholder="Enter your email address" required>
+            </div>
+            
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="password"><i class="fas fa-key"></i> Password</label>
+                <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                <button type="button" class="password-toggle" id="passwordToggle">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+            
+            <!-- Form Actions -->
+            <div class="form-actions">
+                <div class="remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember me</label>
+                </div>
+                <a href="#" class="forgot-password" id="forgotPassword">Forgot Password?</a>
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn" id="loginButton">
+                <span>Login to Admin Panel</span>
+                <i class="fas fa-arrow-right"></i>
+                <div class="loading" id="loadingSpinner"></div>
+            </button>
+        </form>
+        
+        <!-- Login Footer -->
+        <div class="login-footer">
+            <p>&copy; 2023 Grew Energy Pvt Limited. All Rights Reserved.</p>
+            <p>For technical support, contact <a href="mailto:it.support@grew.one">it.support@grew.one</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Lightning Effect
+        const lightningContainer = document.getElementById('lightning');
+        
+        function createLightningEffect(x, y) {
+            // Clear any existing lightning
+            lightningContainer.innerHTML = '';
+            
+            // Create multiple lightning flashes
+            for (let i = 0; i < 3; i++) {
+                const flash = document.createElement('div');
+                flash.classList.add('lightning-flash');
+                
+                // Randomize position slightly
+                const offsetX = Math.random() * 100 - 50;
+                const offsetY = Math.random() * 100 - 50;
+                
+                // Set position and size
+                flash.style.left = `${x + offsetX}px`;
+                flash.style.top = `${y + offsetY}px`;
+                flash.style.width = `${30 + Math.random() * 70}px`;
+                flash.style.height = flash.style.width;
+                
+                // Add to container
+                lightningContainer.appendChild(flash);
+                
+                // Remove after animation completes
+                setTimeout(() => {
+                    if (flash.parentNode === lightningContainer) {
+                        lightningContainer.removeChild(flash);
+                    }
+                }, 500);
+            }
+            
+            // Show lightning container
+            lightningContainer.style.opacity = '1';
+            
+            // Hide after animation
+            setTimeout(() => {
+                lightningContainer.style.opacity = '0';
+            }, 500);
+        }
+        
+        // DOM Elements
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const passwordToggle = document.getElementById('passwordToggle');
+        const loginButton = document.getElementById('loginButton');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const forgotPasswordLink = document.getElementById('forgotPassword');
+        
+        // Toggle password visibility
+        passwordToggle.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            
+            // Toggle eye icon
+            const eyeIcon = this.querySelector('i');
+            if (type === 'text') {
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+            
+            // Create lightning effect
+            createLightningEffect(this.getBoundingClientRect().left + 10, this.getBoundingClientRect().top + 10);
+        });
+        
+        // Login Credentials
+        const validUsername = 'radhika.k@grew.one';
+        const validPassword = 'Grew@1234';
+        
+        // Form submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value;
+            
+            // Show loading spinner
+            loginButton.disabled = true;
+            loadingSpinner.classList.add('show');
+            loginButton.querySelector('span').textContent = 'Authenticating...';
+            
+            // Hide any previous messages
+            errorMessage.classList.remove('show');
+            successMessage.classList.remove('show');
+            
+            // Validate inputs
+            if (!username || !password) {
+                showError('Please enter both username and password');
+                return;
+            }
+            
+            // Check if email format is valid
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(username)) {
+                showError('Please enter a valid email address');
+                return;
+            }
+            
+            // Simulate API call with delay
+            setTimeout(() => {
+                if (username === validUsername && password === validPassword) {
+                    // Login successful
+                    showSuccess();
+                    
+                    // Create lightning effect
+                    const submitRect = loginButton.getBoundingClientRect();
+                    createLightningEffect(submitRect.left + submitRect.width/2, submitRect.top + submitRect.height/2);
+                    
+                    // Redirect to admin page after delay
+                    setTimeout(() => {
+                        window.location.href = 'admin pages.html';
+                    }, 1500);
+                    
+                } else {
+                    // Login failed
+                    showError('Invalid username or password. Please try again.');
+                    
+                    // Create shake effect on form
+                    loginForm.style.animation = 'none';
+                    setTimeout(() => {
+                        loginForm.style.animation = 'shake 0.5s';
+                    }, 10);
+                    
+                    // Clear password field
+                    passwordInput.value = '';
+                    passwordInput.focus();
+                }
+                
+                // Reset button state
+                loginButton.disabled = false;
+                loadingSpinner.classList.remove('show');
+                loginButton.querySelector('span').textContent = 'Login to Admin Panel';
+            }, 1500);
+        });
+        
+        // Show error message
+        function showError(message) {
+            errorMessage.querySelector('#errorText').textContent = message;
+            errorMessage.classList.add('show');
+            
+            // Auto-hide error after 5 seconds
+            setTimeout(() => {
+                errorMessage.classList.remove('show');
+            }, 5000);
+        }
+        
+        // Show success message
+        function showSuccess() {
+            successMessage.classList.add('show');
+            
+            // Change form appearance to indicate success
+            usernameInput.classList.add('valid');
+            passwordInput.classList.add('valid');
+        }
+        
+        // Forgot password functionality
+        forgotPasswordLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create lightning effect
+            createLightningEffect(e.clientX, e.clientY);
+            
+            // Show alert with reset instructions
+            setTimeout(() => {
+                alert('Password reset instructions have been sent to your registered email address. Please check your inbox.');
+            }, 300);
+        });
+        
+        // Focus on username field on page load
+        window.addEventListener('load', function() {
+            usernameInput.focus();
+        });
+        
+        // Add visual feedback on input focus
+        [usernameInput, passwordInput].forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = 'var(--primary-green)';
+                this.style.boxShadow = '0 0 0 3px rgba(76, 175, 80, 0.2)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.borderColor = '#ddd';
+                this.style.boxShadow = 'none';
+            });
+            
+            // Validate on input change
+            input.addEventListener('input', function() {
+                if (this.value) {
+                    this.classList.remove('invalid');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
