@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FIREBASE SCRIPTS ADDED HERE -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
     <style>
         * {
             margin: 0;
@@ -698,6 +701,10 @@
                 <button class="btn btn-secondary" onclick="showAddVacancyModal()">
                     <i class="fas fa-briefcase"></i> Add Vacancy
                 </button>
+                <!-- SYNC BUTTON ADDED HERE -->
+                <button class="btn btn-info" onclick="syncWithFirebase()" title="Sync with other users">
+                    <i class="fas fa-sync"></i> Sync
+                </button>
                 <button class="btn btn-info" onclick="showSettingsModal()">
                     <i class="fas fa-cog"></i> Settings
                 </button>
@@ -1157,13 +1164,28 @@
     </div>
 
     <script>
-        // Initialize data
-        let candidates = JSON.parse(localStorage.getItem('onboardingCandidates')) || [];
-        let backoutCandidates = JSON.parse(localStorage.getItem('backoutCandidates')) || [];
-        let vacancies = JSON.parse(localStorage.getItem('vacancies')) || [];
+        // ==================== FIREBASE CONFIGURATION ====================
+        const firebaseConfig = {
+            apiKey: "AIzaSyDI-YE4bdlqVRPXL-twy4JdunkhUKwaaE4",
+            authDomain: "grewsolarhrdept.firebaseapp.com",
+            projectId: "grewsolarhrdept",
+            storageBucket: "grewsolarhrdept.firebasestorage.app",
+            messagingSenderId: "534464630996",
+            appId: "1:534464630996:web:b5e20a51b5cef339d06b41",
+            measurementId: "G-55PPN689RW"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // ==================== DATA INITIALIZATION ====================
+        let candidates = [];
+        let backoutCandidates = [];
+        let vacancies = [];
         
         // Settings data
-        let settings = JSON.parse(localStorage.getItem('onboardingSettings')) || {
+        let settings = {
             recruiters: ['John Doe', 'Jane Smith', 'Mike Johnson', 'Sarah Wilson', 'David Brown'],
             departments: ['IT', 'HR', 'Finance', 'Marketing', 'Sales', 'Operations'],
             designations: ['Software Engineer', 'Senior Software Engineer', 'HR Executive', 'HR Manager', 'Finance Analyst', 'Marketing Executive'],
@@ -1173,16 +1195,206 @@
         
         let years = [];
         let autoSaveTimer = null;
+
+        // ==================== FIREBASE FUNCTIONS ====================
         
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
+        // Load data from Firebase
+        async function loadDataFromFirebase() {
+            try {
+                // Load candidates
+                const candidatesDoc = await db.collection('onboardingData').doc('candidates').get();
+                if (candidatesDoc.exists) {
+                    candidates = candidatesDoc.data().data || [];
+                }
+                
+                // Load backout candidates
+                const backoutDoc = await db.collection('onboardingData').doc('backout').get();
+                if (backoutDoc.exists) {
+                    backoutCandidates = backoutDoc.data().data || [];
+                }
+                
+                // Load vacancies
+                const vacanciesDoc = await db.collection('onboardingData').doc('vacancies').get();
+                if (vacanciesDoc.exists) {
+                    vacancies = vacanciesDoc.data().data || [];
+                }
+                
+                // Load settings
+                const settingsDoc = await db.collection('onboardingData').doc('settings').get();
+                if (settingsDoc.exists) {
+                    settings = settingsDoc.data();
+                }
+                
+                console.log('Data loaded from Firebase successfully');
+                showNotification('Data loaded from server', 'success');
+            } catch (error) {
+                console.error('Error loading from Firebase:', error);
+                showNotification('Error loading data from server', 'error');
+                
+                // Fallback to localStorage
+                candidates = JSON.parse(localStorage.getItem('onboardingCandidates')) || [];
+                backoutCandidates = JSON.parse(localStorage.getItem('backoutCandidates')) || [];
+                vacancies = JSON.parse(localStorage.getItem('vacancies')) || [];
+                const savedSettings = JSON.parse(localStorage.getItem('onboardingSettings'));
+                if (savedSettings) settings = savedSettings;
+            }
+        }
+
+        // Set up real-time listeners
+        function setupRealtimeListeners() {
+            // Listen for candidate updates
+            db.collection('onboardingData').doc('candidates')
+                .onSnapshot((doc) => {
+                    if (doc.exists) {
+                        const newData = doc.data().data || [];
+                        if (JSON.stringify(candidates) !== JSON.stringify(newData)) {
+                            candidates = newData;
+                            renderCandidatesTable();
+                            updateDashboard();
+                            updateCharts();
+                            showNotification('Candidates updated in real-time!', 'info');
+                        }
+                    }
+                });
+            
+            // Listen for vacancy updates
+            db.collection('onboardingData').doc('vacancies')
+                .onSnapshot((doc) => {
+                    if (doc.exists) {
+                        const newData = doc.data().data || [];
+                        if (JSON.stringify(vacancies) !== JSON.stringify(newData)) {
+                            vacancies = newData;
+                            renderVacanciesTable();
+                            updateDashboard();
+                            updateFilters();
+                            updateCharts();
+                        }
+                    }
+                });
+            
+            // Listen for backout updates
+            db.collection('onboardingData').doc('backout')
+                .onSnapshot((doc) => {
+                    if (doc.exists) {
+                        const newData = doc.data().data || [];
+                        if (JSON.stringify(backoutCandidates) !== JSON.stringify(newData)) {
+                            backoutCandidates = newData;
+                            renderBackoutTable();
+                            updateDashboard();
+                        }
+                    }
+                });
+        }
+
+        // Save all data to Firebase
+        async function saveAllDataToFirebase() {
+            try {
+                await db.collection('onboardingData').doc('candidates').set({
+                    data: candidates,
+                    lastUpdated: new Date().toISOString()
+                });
+                
+                await db.collection('onboardingData').doc('backout').set({
+                    data: backoutCandidates,
+                    lastUpdated: new Date().toISOString()
+                });
+                
+                await db.collection('onboardingData').doc('vacancies').set({
+                    data: vacancies,
+                    lastUpdated: new Date().toISOString()
+                });
+                
+                await db.collection('onboardingData').doc('settings').set(settings);
+                
+                console.log('All data saved to Firebase');
+                showAutoSaveIndicator();
+            } catch (error) {
+                console.error('Error saving to Firebase:', error);
+                showNotification('Error saving to server', 'error');
+                
+                // Fallback to localStorage
+                localStorage.setItem('onboardingCandidates', JSON.stringify(candidates));
+                localStorage.setItem('backoutCandidates', JSON.stringify(backoutCandidates));
+                localStorage.setItem('vacancies', JSON.stringify(vacancies));
+                localStorage.setItem('onboardingSettings', JSON.stringify(settings));
+            }
+        }
+
+        // Modified save functions
+        async function saveCandidates() {
+            try {
+                await db.collection('onboardingData').doc('candidates').set({
+                    data: candidates,
+                    lastUpdated: new Date().toISOString()
+                });
+                showAutoSaveIndicator();
+            } catch (error) {
+                console.error('Error saving candidates:', error);
+                localStorage.setItem('onboardingCandidates', JSON.stringify(candidates));
+            }
+        }
+
+        async function saveBackoutCandidates() {
+            try {
+                await db.collection('onboardingData').doc('backout').set({
+                    data: backoutCandidates,
+                    lastUpdated: new Date().toISOString()
+                });
+                showAutoSaveIndicator();
+            } catch (error) {
+                console.error('Error saving backout candidates:', error);
+                localStorage.setItem('backoutCandidates', JSON.stringify(backoutCandidates));
+            }
+        }
+
+        async function saveVacancies() {
+            try {
+                await db.collection('onboardingData').doc('vacancies').set({
+                    data: vacancies,
+                    lastUpdated: new Date().toISOString()
+                });
+                showAutoSaveIndicator();
+            } catch (error) {
+                console.error('Error saving vacancies:', error);
+                localStorage.setItem('vacancies', JSON.stringify(vacancies));
+            }
+        }
+
+        async function saveSettings() {
+            try {
+                await db.collection('onboardingData').doc('settings').set(settings);
+                showAutoSaveIndicator();
+            } catch (error) {
+                console.error('Error saving settings:', error);
+                localStorage.setItem('onboardingSettings', JSON.stringify(settings));
+            }
+        }
+
+        // Sync function
+        async function syncWithFirebase() {
+            showNotification('Syncing with server...', 'info');
+            await saveAllDataToFirebase();
+            await loadDataFromFirebase();
+            showNotification('Synced successfully!', 'success');
+        }
+
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', async function() {
             // Generate years for filter (current year - 2 to current year + 2)
             const currentYear = new Date().getFullYear();
             for (let year = currentYear - 2; year <= currentYear + 2; year++) {
                 years.push(year);
             }
             
-            loadInitialData();
+            // Load data from Firebase
+            await loadDataFromFirebase();
+            
+            // If no data in Firebase, load sample data
+            if (candidates.length === 0 && vacancies.length === 0) {
+                loadInitialData();
+                await saveAllDataToFirebase();
+            }
+            
             renderCandidatesTable();
             renderBackoutTable();
             renderVacanciesTable();
@@ -1190,6 +1402,9 @@
             updateFilters();
             initializeCharts();
             loadSettingsLists();
+            
+            // Set up real-time listeners
+            setupRealtimeListeners();
             
             // Auto-save indicator
             showAutoSaveIndicator();
@@ -1200,11 +1415,7 @@
             }
         });
 
-        // Save settings
-        function saveSettings() {
-            localStorage.setItem('onboardingSettings', JSON.stringify(settings));
-            showAutoSaveIndicator();
-        }
+        // ==================== EXISTING FUNCTIONS (UPDATED) ====================
 
         // Auto-save indicator
         function showAutoSaveIndicator() {
@@ -1256,7 +1467,6 @@
                         dateCreated: new Date().toISOString()
                     }
                 ];
-                saveCandidates();
             }
             
             if (vacancies.length === 0) {
@@ -1288,24 +1498,7 @@
                         targetDate: '2024-02-28'
                     }
                 ];
-                saveVacancies();
             }
-        }
-
-        // Save data to localStorage
-        function saveCandidates() {
-            localStorage.setItem('onboardingCandidates', JSON.stringify(candidates));
-            showAutoSaveIndicator();
-        }
-
-        function saveBackoutCandidates() {
-            localStorage.setItem('backoutCandidates', JSON.stringify(backoutCandidates));
-            showAutoSaveIndicator();
-        }
-
-        function saveVacancies() {
-            localStorage.setItem('vacancies', JSON.stringify(vacancies));
-            showAutoSaveIndicator();
         }
 
         // Render tables
