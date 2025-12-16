@@ -24,97 +24,6 @@
             padding: 20px;
         }
 
-        /* Login Page Styles */
-        .login-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1a8c5e 0%, #2ecc71 100%);
-        }
-
-        .login-box {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 450px;
-            text-align: center;
-        }
-
-        .login-logo {
-            font-size: 3rem;
-            color: #2ecc71;
-            margin-bottom: 20px;
-        }
-
-        .login-title {
-            color: #333;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-        }
-
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-            font-weight: 500;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #2ecc71;
-        }
-
-        .login-btn {
-            background: #2ecc71;
-            color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .login-btn:hover {
-            background: #27ae60;
-            transform: translateY(-2px);
-        }
-
-        .login-error {
-            color: #e74c3c;
-            margin-top: 10px;
-            font-size: 14px;
-            display: none;
-        }
-
-        /* Main container - initially hidden */
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -122,12 +31,11 @@
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            display: none; /* Hidden until login */
         }
 
-        /* Updated color scheme to green */
+        /* Header Styles */
         .header {
-            background: linear-gradient(to right, #1a8c5e, #2ecc71);
+            background: linear-gradient(to right, #667eea, #764ba2);
             color: white;
             padding: 20px 30px;
             display: flex;
@@ -152,7 +60,7 @@
             flex-wrap: wrap;
         }
 
-        /* Button Styles with Green Theme */
+        /* Button Styles */
         .btn {
             padding: 12px 24px;
             border: none;
@@ -167,32 +75,32 @@
         }
 
         .btn-primary {
-            background: #2ecc71;
+            background: #4CAF50;
             color: white;
         }
 
         .btn-primary:hover {
-            background: #27ae60;
+            background: #45a049;
             transform: translateY(-2px);
         }
 
         .btn-secondary {
-            background: #3498db;
+            background: #2196F3;
             color: white;
         }
 
         .btn-secondary:hover {
-            background: #2980b9;
+            background: #0b7dda;
             transform: translateY(-2px);
         }
 
         .btn-warning {
-            background: #f39c12;
+            background: #ff9800;
             color: white;
         }
 
         .btn-warning:hover {
-            background: #d68910;
+            background: #e68a00;
             transform: translateY(-2px);
         }
 
@@ -207,24 +115,24 @@
         }
 
         .btn-danger {
-            background: #e74c3c;
+            background: #f44336;
             color: white;
         }
 
         .btn-danger:hover {
-            background: #c0392b;
+            background: #da190b;
         }
 
         .btn-clear {
-            background: #95a5a6;
+            background: #9e9e9e;
             color: white;
         }
 
         .btn-clear:hover {
-            background: #7f8c8d;
+            background: #757575;
         }
 
-        /* Dashboard Summary Cards with Green Theme */
+        /* Dashboard Summary Cards */
         .dashboard-summary {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -255,11 +163,11 @@
             color: white;
         }
 
-        .total-candidates i { background: #3498db; }
-        .selected i { background: #2ecc71; }
-        .backout i { background: #e74c3c; }
-        .vacancies i { background: #f39c12; }
-        .joining i { background: #9b59b6; }
+        .total-candidates i { background: #2196F3; }
+        .selected i { background: #4CAF50; }
+        .backout i { background: #f44336; }
+        .vacancies i { background: #ff9800; }
+        .joining i { background: #9c27b0; }
 
         .summary-card h3 {
             font-size: 1.8rem;
@@ -306,7 +214,7 @@
 
         .filter-group select:focus {
             outline: none;
-            border-color: #2ecc71;
+            border-color: #667eea;
         }
 
         /* Tabs */
@@ -334,14 +242,14 @@
         }
 
         .tab-btn:hover {
-            color: #2ecc71;
-            background: rgba(46, 204, 113, 0.1);
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
         }
 
         .tab-btn.active {
-            color: #2ecc71;
-            border-bottom: 3px solid #2ecc71;
-            background: rgba(46, 204, 113, 0.05);
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            background: rgba(102, 126, 234, 0.05);
         }
 
         /* Table Styles */
@@ -367,7 +275,7 @@
         }
 
         .data-table thead {
-            background: linear-gradient(to right, #1a8c5e, #2ecc71);
+            background: linear-gradient(to right, #667eea, #764ba2);
             color: white;
         }
 
@@ -497,7 +405,7 @@
         }
 
         .modal-header {
-            background: linear-gradient(to right, #1a8c5e, #2ecc71);
+            background: linear-gradient(to right, #667eea, #764ba2);
             color: white;
             padding: 20px;
             display: flex;
@@ -567,12 +475,12 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #2ecc71;
+            border-color: #667eea;
         }
 
         .form-group.required label::after {
             content: " *";
-            color: #e74c3c;
+            color: #f44336;
         }
 
         .form-actions {
@@ -627,7 +535,7 @@
         .settings-item button {
             background: none;
             border: none;
-            color: #e74c3c;
+            color: #f44336;
             cursor: pointer;
             padding: 2px 6px;
         }
@@ -647,40 +555,11 @@
 
         .settings-input-group button {
             padding: 8px 16px;
-            background: #2ecc71;
+            background: #4CAF50;
             color: white;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-        }
-
-        /* User Info in Header */
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 15px;
-            border-radius: 8px;
-        }
-
-        .user-info i {
-            font-size: 1.2rem;
-        }
-
-        .logout-btn {
-            background: rgba(255, 255, 255, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .logout-btn:hover {
-            background: rgba(255, 255, 255, 0.4);
         }
 
         /* Responsive Design */
@@ -699,13 +578,6 @@
                 flex-direction: column;
                 gap: 15px;
                 text-align: center;
-            }
-            
-            .user-info {
-                order: 3;
-                width: 100%;
-                justify-content: center;
-                margin-top: 10px;
             }
             
             .dashboard-summary {
@@ -739,11 +611,6 @@
             
             .form-row {
                 grid-template-columns: 1fr;
-            }
-            
-            .login-box {
-                padding: 30px 20px;
-                margin: 20px;
             }
         }
 
@@ -790,17 +657,17 @@
             }
         }
 
-        .notification.success { background: #2ecc71; }
-        .notification.error { background: #e74c3c; }
-        .notification.info { background: #3498db; }
-        .notification.warning { background: #f39c12; }
+        .notification.success { background: #4CAF50; }
+        .notification.error { background: #f44336; }
+        .notification.info { background: #2196F3; }
+        .notification.warning { background: #ff9800; }
 
         /* Auto-save indicator */
         .auto-save-indicator {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: #2ecc71;
+            background: #4CAF50;
             color: white;
             padding: 8px 16px;
             border-radius: 20px;
@@ -820,67 +687,12 @@
     </style>
 </head>
 <body>
-    <!-- Login Page -->
-    <div id="loginPage" class="login-container">
-        <div class="login-box">
-            <div class="login-logo">
-                <i class="fas fa-user-tie"></i>
-            </div>
-            <h1 class="login-title">Onboarding Tracker</h1>
-            <h3 style="color: #555; margin-bottom: 30px; font-weight: 400;">Please login to continue</h3>
-            
-            <form id="loginForm" class="login-form">
-                <div class="form-group">
-                    <label for="username"><i class="fas fa-user"></i> Username</label>
-                    <input type="text" id="username" placeholder="Enter your username" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password"><i class="fas fa-lock"></i> Password</label>
-                    <input type="password" id="password" placeholder="Enter your password" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="empId"><i class="fas fa-id-card"></i> Employee ID</label>
-                    <input type="text" id="empId" placeholder="Enter your employee ID" required>
-                </div>
-                
-                <button type="submit" class="login-btn">
-                    <i class="fas fa-sign-in-alt"></i> Login
-                </button>
-                
-                <div id="loginError" class="login-error">
-                    <i class="fas fa-exclamation-circle"></i> Invalid credentials. Please try again.
-                </div>
-            </form>
-            
-            <div style="margin-top: 20px; color: #777; font-size: 14px;">
-                <p>Demo Credentials:</p>
-                <p>Username: radhika.s@grew.one</p>
-                <p>Password: Grew@1234</p>
-                <p>Employee ID: (Enter manually)</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Application (Hidden until login) -->
-    <div class="container" id="mainApp">
+    <div class="container">
         <!-- Header -->
         <header class="header">
             <div class="logo">
                 <i class="fas fa-user-tie"></i>
-                <div>
-                    <h1>Onboarding Tracker</h1>
-                    <div class="user-info">
-                        <i class="fas fa-user-circle"></i>
-                        <span id="loggedInUser">User</span>
-                        <span>•</span>
-                        <span id="loggedInEmpId">Emp ID</span>
-                        <button class="logout-btn" onclick="logout()">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </button>
-                    </div>
-                </div>
+                <h1>Onboarding Tracker</h1>
             </div>
             <div class="header-controls">
                 <button class="btn btn-primary" onclick="showAddCandidateModal()">
@@ -1352,276 +1164,222 @@
     </div>
 
     <script>
-        // ==================== LOGIN FUNCTIONALITY ====================
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value;
-            const empId = document.getElementById('empId').value.trim();
-            
-            // Hardcoded credentials
-            const validUsername = 'radhika.s@grew.one';
-            const validPassword = 'Grew@1234';
-            
-            if (username === validUsername && password === validPassword && empId) {
-                // Successful login
-                document.getElementById('loginPage').style.display = 'none';
-                document.getElementById('mainApp').style.display = 'block';
-                
-                // Display user info in header
-                document.getElementById('loggedInUser').textContent = username;
-                document.getElementById('loggedInEmpId').textContent = `ID: ${empId}`;
-                
-                // Show welcome notification
-                showNotification('Login successful! Welcome to Onboarding Tracker.', 'success');
-                
-                // Initialize the application
-                initializeApplication();
-            } else {
-                // Failed login
-                document.getElementById('loginError').style.display = 'block';
-                document.getElementById('password').value = '';
-                
-                // Shake animation for error
-                const loginBox = document.querySelector('.login-box');
-                loginBox.style.animation = 'shake 0.5s';
-                setTimeout(() => {
-                    loginBox.style.animation = '';
-                }, 500);
-            }
-        });
+        // ==================== FIREBASE CONFIGURATION ====================
+        const firebaseConfig = {
+            apiKey: "AIzaSyDI-YE4bdlqVRPXL-twy4JdunkhUKwaaE4",
+            authDomain: "grewsolarhrdept.firebaseapp.com",
+            projectId: "grewsolarhrdept",
+            storageBucket: "grewsolarhrdept.firebasestorage.app",
+            messagingSenderId: "534464630996",
+            appId: "1:534464630996:web:b5e20a51b5cef339d06b41",
+            measurementId: "G-55PPN689RW"
+        };
 
-        function logout() {
-            if (confirm('Are you sure you want to logout?')) {
-                // Show login page
-                document.getElementById('loginPage').style.display = 'flex';
-                document.getElementById('mainApp').style.display = 'none';
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // ==================== DATA INITIALIZATION ====================
+        let candidates = [];
+        let backoutCandidates = [];
+        let vacancies = [];
+        
+        // Settings data
+        let settings = {
+            recruiters: ['John Doe', 'Jane Smith', 'Mike Johnson', 'Sarah Wilson', 'David Brown'],
+            departments: ['IT', 'HR', 'Finance', 'Marketing', 'Sales', 'Operations'],
+            designations: ['Software Engineer', 'Senior Software Engineer', 'HR Executive', 'HR Manager', 'Finance Analyst', 'Marketing Executive'],
+            statuses: ['Applied', 'Selected for Interview', 'Interview Passout', 'Selected', 'Joined', 'Backout'],
+            locations: ['DUDU', 'HO', 'BHOPAL']
+        };
+        
+        let years = [];
+        let autoSaveTimer = null;
+
+        // ==================== FIREBASE FUNCTIONS ====================
+        
+        // Load data from Firebase
+        async function loadDataFromFirebase() {
+            try {
+                // Load candidates
+                const candidatesDoc = await db.collection('onboardingData').doc('candidates').get();
+                if (candidatesDoc.exists) {
+                    candidates = candidatesDoc.data().data || [];
+                }
                 
-                // Clear login form
-                document.getElementById('loginForm').reset();
-                document.getElementById('loginError').style.display = 'none';
+                // Load backout candidates
+                const backoutDoc = await db.collection('onboardingData').doc('backout').get();
+                if (backoutDoc.exists) {
+                    backoutCandidates = backoutDoc.data().data || [];
+                }
                 
-                showNotification('You have been logged out successfully.', 'info');
+                // Load vacancies
+                const vacanciesDoc = await db.collection('onboardingData').doc('vacancies').get();
+                if (vacanciesDoc.exists) {
+                    vacancies = vacanciesDoc.data().data || [];
+                }
+                
+                // Load settings
+                const settingsDoc = await db.collection('onboardingData').doc('settings').get();
+                if (settingsDoc.exists) {
+                    settings = settingsDoc.data();
+                }
+                
+                console.log('Data loaded from Firebase successfully');
+                showNotification('Data loaded from server', 'success');
+            } catch (error) {
+                console.error('Error loading from Firebase:', error);
+                showNotification('Error loading data from server', 'error');
+                
+                // Fallback to localStorage
+                candidates = JSON.parse(localStorage.getItem('onboardingCandidates')) || [];
+                backoutCandidates = JSON.parse(localStorage.getItem('backoutCandidates')) || [];
+                vacancies = JSON.parse(localStorage.getItem('vacancies')) || [];
+                const savedSettings = JSON.parse(localStorage.getItem('onboardingSettings'));
+                if (savedSettings) settings = savedSettings;
             }
         }
 
-        function initializeApplication() {
-            // ==================== FIREBASE CONFIGURATION ====================
-            const firebaseConfig = {
-                apiKey: "AIzaSyDI-YE4bdlqVRPXL-twy4JdunkhUKwaaE4",
-                authDomain: "grewsolarhrdept.firebaseapp.com",
-                projectId: "grewsolarhrdept",
-                storageBucket: "grewsolarhrdept.firebasestorage.app",
-                messagingSenderId: "534464630996",
-                appId: "1:534464630996:web:b5e20a51b5cef339d06b41",
-                measurementId: "G-55PPN689RW"
-            };
-
-            // Initialize Firebase
-            const app = firebase.initializeApp(firebaseConfig);
-            const db = firebase.firestore();
-
-            // ==================== DATA INITIALIZATION ====================
-            let candidates = [];
-            let backoutCandidates = [];
-            let vacancies = [];
-            
-            // Settings data
-            let settings = {
-                recruiters: ['John Doe', 'Jane Smith', 'Mike Johnson', 'Sarah Wilson', 'David Brown'],
-                departments: ['IT', 'HR', 'Finance', 'Marketing', 'Sales', 'Operations'],
-                designations: ['Software Engineer', 'Senior Software Engineer', 'HR Executive', 'HR Manager', 'Finance Analyst', 'Marketing Executive'],
-                statuses: ['Applied', 'Selected for Interview', 'Interview Passout', 'Selected', 'Joined', 'Backout'],
-                locations: ['DUDU', 'HO', 'BHOPAL']
-            };
-            
-            let years = [];
-            let autoSaveTimer = null;
-
-            // ==================== FIREBASE FUNCTIONS ====================
-            
-            // Load data from Firebase
-            async function loadDataFromFirebase() {
-                try {
-                    // Load candidates
-                    const candidatesDoc = await db.collection('onboardingData').doc('candidates').get();
-                    if (candidatesDoc.exists) {
-                        candidates = candidatesDoc.data().data || [];
-                    }
-                    
-                    // Load backout candidates
-                    const backoutDoc = await db.collection('onboardingData').doc('backout').get();
-                    if (backoutDoc.exists) {
-                        backoutCandidates = backoutDoc.data().data || [];
-                    }
-                    
-                    // Load vacancies
-                    const vacanciesDoc = await db.collection('onboardingData').doc('vacancies').get();
-                    if (vacanciesDoc.exists) {
-                        vacancies = vacanciesDoc.data().data || [];
-                    }
-                    
-                    // Load settings
-                    const settingsDoc = await db.collection('onboardingData').doc('settings').get();
-                    if (settingsDoc.exists) {
-                        settings = settingsDoc.data();
-                    }
-                    
-                    console.log('Data loaded from Firebase successfully');
-                    showNotification('Data loaded from server', 'success');
-                } catch (error) {
-                    console.error('Error loading from Firebase:', error);
-                    showNotification('Error loading data from server', 'error');
-                    
-                    // Fallback to localStorage
-                    candidates = JSON.parse(localStorage.getItem('onboardingCandidates')) || [];
-                    backoutCandidates = JSON.parse(localStorage.getItem('backoutCandidates')) || [];
-                    vacancies = JSON.parse(localStorage.getItem('vacancies')) || [];
-                    const savedSettings = JSON.parse(localStorage.getItem('onboardingSettings'));
-                    if (savedSettings) settings = savedSettings;
-                }
-            }
-
-            // Set up real-time listeners
-            function setupRealtimeListeners() {
-                // Listen for candidate updates
-                db.collection('onboardingData').doc('candidates')
-                    .onSnapshot((doc) => {
-                        if (doc.exists) {
-                            const newData = doc.data().data || [];
-                            if (JSON.stringify(candidates) !== JSON.stringify(newData)) {
-                                candidates = newData;
-                                renderCandidatesTable();
-                                updateDashboard();
-                                updateCharts();
-                                showNotification('Candidates updated in real-time!', 'info');
-                            }
+        // Set up real-time listeners
+        function setupRealtimeListeners() {
+            // Listen for candidate updates
+            db.collection('onboardingData').doc('candidates')
+                .onSnapshot((doc) => {
+                    if (doc.exists) {
+                        const newData = doc.data().data || [];
+                        if (JSON.stringify(candidates) !== JSON.stringify(newData)) {
+                            candidates = newData;
+                            renderCandidatesTable();
+                            updateDashboard();
+                            updateCharts();
+                            showNotification('Candidates updated in real-time!', 'info');
                         }
-                    });
+                    }
+                });
+            
+            // Listen for vacancy updates
+            db.collection('onboardingData').doc('vacancies')
+                .onSnapshot((doc) => {
+                    if (doc.exists) {
+                        const newData = doc.data().data || [];
+                        if (JSON.stringify(vacancies) !== JSON.stringify(newData)) {
+                            vacancies = newData;
+                            renderVacanciesTable();
+                            updateDashboard();
+                            updateFilters();
+                            updateCharts();
+                        }
+                    }
+                });
+            
+            // Listen for backout updates
+            db.collection('onboardingData').doc('backout')
+                .onSnapshot((doc) => {
+                    if (doc.exists) {
+                        const newData = doc.data().data || [];
+                        if (JSON.stringify(backoutCandidates) !== JSON.stringify(newData)) {
+                            backoutCandidates = newData;
+                            renderBackoutTable();
+                            updateDashboard();
+                        }
+                    }
+                });
+        }
+
+        // Save all data to Firebase
+        async function saveAllDataToFirebase() {
+            try {
+                await db.collection('onboardingData').doc('candidates').set({
+                    data: candidates,
+                    lastUpdated: new Date().toISOString()
+                });
                 
-                // Listen for vacancy updates
-                db.collection('onboardingData').doc('vacancies')
-                    .onSnapshot((doc) => {
-                        if (doc.exists) {
-                            const newData = doc.data().data || [];
-                            if (JSON.stringify(vacancies) !== JSON.stringify(newData)) {
-                                vacancies = newData;
-                                renderVacanciesTable();
-                                updateDashboard();
-                                updateFilters();
-                                updateCharts();
-                            }
-                        }
-                    });
+                await db.collection('onboardingData').doc('backout').set({
+                    data: backoutCandidates,
+                    lastUpdated: new Date().toISOString()
+                });
                 
-                // Listen for backout updates
-                db.collection('onboardingData').doc('backout')
-                    .onSnapshot((doc) => {
-                        if (doc.exists) {
-                            const newData = doc.data().data || [];
-                            if (JSON.stringify(backoutCandidates) !== JSON.stringify(newData)) {
-                                backoutCandidates = newData;
-                                renderBackoutTable();
-                                updateDashboard();
-                            }
-                        }
-                    });
+                await db.collection('onboardingData').doc('vacancies').set({
+                    data: vacancies,
+                    lastUpdated: new Date().toISOString()
+                });
+                
+                await db.collection('onboardingData').doc('settings').set(settings);
+                
+                console.log('All data saved to Firebase');
+                showAutoSaveIndicator();
+            } catch (error) {
+                console.error('Error saving to Firebase:', error);
+                showNotification('Error saving to server', 'error');
+                
+                // Fallback to localStorage
+                localStorage.setItem('onboardingCandidates', JSON.stringify(candidates));
+                localStorage.setItem('backoutCandidates', JSON.stringify(backoutCandidates));
+                localStorage.setItem('vacancies', JSON.stringify(vacancies));
+                localStorage.setItem('onboardingSettings', JSON.stringify(settings));
             }
+        }
 
-            // Save all data to Firebase
-            async function saveAllDataToFirebase() {
-                try {
-                    await db.collection('onboardingData').doc('candidates').set({
-                        data: candidates,
-                        lastUpdated: new Date().toISOString()
-                    });
-                    
-                    await db.collection('onboardingData').doc('backout').set({
-                        data: backoutCandidates,
-                        lastUpdated: new Date().toISOString()
-                    });
-                    
-                    await db.collection('onboardingData').doc('vacancies').set({
-                        data: vacancies,
-                        lastUpdated: new Date().toISOString()
-                    });
-                    
-                    await db.collection('onboardingData').doc('settings').set(settings);
-                    
-                    console.log('All data saved to Firebase');
-                    showAutoSaveIndicator();
-                } catch (error) {
-                    console.error('Error saving to Firebase:', error);
-                    showNotification('Error saving to server', 'error');
-                    
-                    // Fallback to localStorage
-                    localStorage.setItem('onboardingCandidates', JSON.stringify(candidates));
-                    localStorage.setItem('backoutCandidates', JSON.stringify(backoutCandidates));
-                    localStorage.setItem('vacancies', JSON.stringify(vacancies));
-                    localStorage.setItem('onboardingSettings', JSON.stringify(settings));
-                }
+        // Modified save functions
+        async function saveCandidates() {
+            try {
+                await db.collection('onboardingData').doc('candidates').set({
+                    data: candidates,
+                    lastUpdated: new Date().toISOString()
+                });
+                showAutoSaveIndicator();
+            } catch (error) {
+                console.error('Error saving candidates:', error);
+                localStorage.setItem('onboardingCandidates', JSON.stringify(candidates));
             }
+        }
 
-            // Modified save functions
-            async function saveCandidates() {
-                try {
-                    await db.collection('onboardingData').doc('candidates').set({
-                        data: candidates,
-                        lastUpdated: new Date().toISOString()
-                    });
-                    showAutoSaveIndicator();
-                } catch (error) {
-                    console.error('Error saving candidates:', error);
-                    localStorage.setItem('onboardingCandidates', JSON.stringify(candidates));
-                }
+        async function saveBackoutCandidates() {
+            try {
+                await db.collection('onboardingData').doc('backout').set({
+                    data: backoutCandidates,
+                    lastUpdated: new Date().toISOString()
+                });
+                showAutoSaveIndicator();
+            } catch (error) {
+                console.error('Error saving backout candidates:', error);
+                localStorage.setItem('backoutCandidates', JSON.stringify(backoutCandidates));
             }
+        }
 
-            async function saveBackoutCandidates() {
-                try {
-                    await db.collection('onboardingData').doc('backout').set({
-                        data: backoutCandidates,
-                        lastUpdated: new Date().toISOString()
-                    });
-                    showAutoSaveIndicator();
-                } catch (error) {
-                    console.error('Error saving backout candidates:', error);
-                    localStorage.setItem('backoutCandidates', JSON.stringify(backoutCandidates));
-                }
+        async function saveVacancies() {
+            try {
+                await db.collection('onboardingData').doc('vacancies').set({
+                    data: vacancies,
+                    lastUpdated: new Date().toISOString()
+                });
+                showAutoSaveIndicator();
+            } catch (error) {
+                console.error('Error saving vacancies:', error);
+                localStorage.setItem('vacancies', JSON.stringify(vacancies));
             }
+        }
 
-            async function saveVacancies() {
-                try {
-                    await db.collection('onboardingData').doc('vacancies').set({
-                        data: vacancies,
-                        lastUpdated: new Date().toISOString()
-                    });
-                    showAutoSaveIndicator();
-                } catch (error) {
-                    console.error('Error saving vacancies:', error);
-                    localStorage.setItem('vacancies', JSON.stringify(vacancies));
-                }
+        async function saveSettings() {
+            try {
+                await db.collection('onboardingData').doc('settings').set(settings);
+                showAutoSaveIndicator();
+            } catch (error) {
+                console.error('Error saving settings:', error);
+                localStorage.setItem('onboardingSettings', JSON.stringify(settings));
             }
+        }
 
-            async function saveSettings() {
-                try {
-                    await db.collection('onboardingData').doc('settings').set(settings);
-                    showAutoSaveIndicator();
-                } catch (error) {
-                    console.error('Error saving settings:', error);
-                    localStorage.setItem('onboardingSettings', JSON.stringify(settings));
-                }
-            }
+        // Sync function
+        async function syncWithFirebase() {
+            showNotification('Syncing with server...', 'info');
+            await saveAllDataToFirebase();
+            await loadDataFromFirebase();
+            showNotification('Synced successfully!', 'success');
+        }
 
-            // Sync function
-            async function syncWithFirebase() {
-                showNotification('Syncing with server...', 'info');
-                await saveAllDataToFirebase();
-                await loadDataFromFirebase();
-                showNotification('Synced successfully!', 'success');
-            }
-
-            // ==================== INITIALIZATION ====================
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', async function() {
             // Generate years for filter (current year - 2 to current year + 2)
             const currentYear = new Date().getFullYear();
             for (let year = currentYear - 2; year <= currentYear + 2; year++) {
@@ -1655,1320 +1413,1313 @@
             if (candidates.length === 0) {
                 showNotification('Welcome to Onboarding Tracker! Add your first candidate to get started.', 'info');
             }
+        });
 
-            // Auto-save indicator
-            function showAutoSaveIndicator() {
-                const indicator = document.getElementById('autoSaveIndicator');
-                indicator.classList.add('show');
-                setTimeout(() => {
-                    indicator.classList.remove('show');
-                }, 2000);
-            }
+        // ==================== EXISTING FUNCTIONS (UPDATED) ====================
 
-            // Load initial sample data
-            function loadInitialData() {
-                if (candidates.length === 0) {
-                    candidates = [
-                        {
-                            id: Date.now(),
-                            recruiter: 'John Doe',
-                            name: 'Alex Johnson',
-                            email: 'alex@example.com',
-                            currentDesignation: 'Software Engineer',
-                            currentCTC: 12,
-                            currentCompany: 'Tech Corp',
-                            companyLocation: 'Bangalore',
-                            applyFor: 'Senior Software Engineer',
-                            hike: 30,
-                            afterHikeCTC: 15.6,
-                            status: 'Selected',
-                            interviewDate: '2024-01-15',
-                            doj: '2024-02-01',
-                            location: 'BHOPAL',
-                            dateCreated: new Date().toISOString()
-                        },
-                        {
-                            id: Date.now() + 1,
-                            recruiter: 'Jane Smith',
-                            name: 'Maria Garcia',
-                            email: 'maria@example.com',
-                            currentDesignation: 'HR Executive',
-                            currentCTC: 8,
-                            currentCompany: 'HR Solutions',
-                            companyLocation: 'Mumbai',
-                            applyFor: 'HR Manager',
-                            hike: 25,
-                            afterHikeCTC: 10,
-                            status: 'Interview Passout',
-                            interviewDate: '2024-01-20',
-                            doj: '',
-                            location: '',
-                            dateCreated: new Date().toISOString()
-                        }
-                    ];
-                }
-                
-                if (vacancies.length === 0) {
-                    vacancies = [
-                        {
-                            id: Date.now(),
-                            company: 'ABC Corp',
-                            department: 'IT',
-                            designation: 'Senior Software Engineer',
-                            total: 5,
-                            filled: 1,
-                            remaining: 4,
-                            status: 'Open',
-                            location: 'BHOPAL',
-                            recruiter: 'John Doe',
-                            targetDate: '2024-03-31'
-                        },
-                        {
-                            id: Date.now() + 1,
-                            company: 'XYZ Ltd',
-                            department: 'HR',
-                            designation: 'HR Manager',
-                            total: 2,
-                            filled: 0,
-                            remaining: 2,
-                            status: 'Open',
-                            location: 'HO',
-                            recruiter: 'Jane Smith',
-                            targetDate: '2024-02-28'
-                        }
-                    ];
-                }
-            }
+        // Auto-save indicator
+        function showAutoSaveIndicator() {
+            const indicator = document.getElementById('autoSaveIndicator');
+            indicator.classList.add('show');
+            setTimeout(() => {
+                indicator.classList.remove('show');
+            }, 2000);
+        }
 
-            // Render tables
-            function renderCandidatesTable() {
-                const tableBody = document.getElementById('candidatesTable');
-                const filteredCandidates = getFilteredCandidates();
-                
-                tableBody.innerHTML = filteredCandidates.map((candidate, index) => `
-                    <tr>
-                        <td>${index + 1}</td>
-                        <td>${candidate.recruiter}</td>
-                        <td>${candidate.name}</td>
-                        <td>${candidate.email}</td>
-                        <td>${candidate.currentDesignation}</td>
-                        <td>₹${candidate.currentCTC} LPA</td>
-                        <td>${candidate.currentCompany}</td>
-                        <td>${candidate.applyFor}</td>
-                        <td>${candidate.hike ? candidate.hike + '%' : '-'}</td>
-                        <td>${candidate.afterHikeCTC ? '₹' + candidate.afterHikeCTC.toFixed(2) + ' LPA' : '-'}</td>
-                        <td><span class="status-badge status-${candidate.status.toLowerCase().replace(' ', '-')}">${candidate.status}</span></td>
-                        <td>${candidate.doj || '-'}</td>
-                        <td>${candidate.location || '-'}</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="action-btn" onclick="editCandidate(${candidate.id})" style="background: #3498db; color: white;">
-                                    <i class="fas fa-edit"></i> Edit
-                                </button>
-                                <button class="action-btn" onclick="changeStatus(${candidate.id})" style="background: #2ecc71; color: white;">
-                                    <i class="fas fa-exchange-alt"></i> Status
-                                </button>
-                                <button class="action-btn" onclick="sendEmailModal('${candidate.email}', '${candidate.name}')" style="background: #9b59b6; color: white;">
-                                    <i class="fas fa-envelope"></i> Email
-                                </button>
-                                <button class="action-btn" onclick="moveToBackout(${candidate.id})" style="background: #e74c3c; color: white;">
-                                    <i class="fas fa-user-slash"></i> Backout
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                `).join('');
-            }
-
-            function renderBackoutTable() {
-                const tableBody = document.getElementById('backoutTable');
-                
-                const filteredBackout = backoutCandidates.filter(candidate => {
-                    const recruiterFilter = document.getElementById('filterRecruiter').value;
-                    const yearFilter = document.getElementById('filterYear').value;
-                    
-                    if (recruiterFilter !== 'all' && candidate.recruiter !== recruiterFilter) return false;
-                    if (yearFilter !== 'all') {
-                        const year = new Date(candidate.backoutDate).getFullYear().toString();
-                        if (year !== yearFilter) return false;
+        // Load initial sample data
+        function loadInitialData() {
+            if (candidates.length === 0) {
+                candidates = [
+                    {
+                        id: Date.now(),
+                        recruiter: 'John Doe',
+                        name: 'Alex Johnson',
+                        email: 'alex@example.com',
+                        currentDesignation: 'Software Engineer',
+                        currentCTC: 12,
+                        currentCompany: 'Tech Corp',
+                        companyLocation: 'Bangalore',
+                        applyFor: 'Senior Software Engineer',
+                        hike: 30,
+                        afterHikeCTC: 15.6,
+                        status: 'Selected',
+                        interviewDate: '2024-01-15',
+                        doj: '2024-02-01',
+                        location: 'BHOPAL',
+                        dateCreated: new Date().toISOString()
+                    },
+                    {
+                        id: Date.now() + 1,
+                        recruiter: 'Jane Smith',
+                        name: 'Maria Garcia',
+                        email: 'maria@example.com',
+                        currentDesignation: 'HR Executive',
+                        currentCTC: 8,
+                        currentCompany: 'HR Solutions',
+                        companyLocation: 'Mumbai',
+                        applyFor: 'HR Manager',
+                        hike: 25,
+                        afterHikeCTC: 10,
+                        status: 'Interview Passout',
+                        interviewDate: '2024-01-20',
+                        doj: '',
+                        location: '',
+                        dateCreated: new Date().toISOString()
                     }
-                    
-                    return true;
-                });
-                
-                tableBody.innerHTML = filteredBackout.map((candidate, index) => `
-                    <tr>
-                        <td>${index + 1}</td>
-                        <td>${candidate.recruiter}</td>
-                        <td>${candidate.name}</td>
-                        <td>${candidate.email}</td>
-                        <td>${candidate.applyFor}</td>
-                        <td>${new Date(candidate.backoutDate).toLocaleDateString()}</td>
-                        <td>${candidate.backoutReason || 'Not specified'}</td>
-                        <td>${candidate.currentCompany}</td>
-                        <td>
-                            <button class="action-btn" onclick="sendEmailModal('${candidate.email}', '${candidate.name}')" style="background: #9b59b6; color: white;">
-                                <i class="fas fa-envelope"></i> Email
-                            </button>
-                        </td>
-                    </tr>
-                `).join('');
+                ];
             }
+            
+            if (vacancies.length === 0) {
+                vacancies = [
+                    {
+                        id: Date.now(),
+                        company: 'ABC Corp',
+                        department: 'IT',
+                        designation: 'Senior Software Engineer',
+                        total: 5,
+                        filled: 1,
+                        remaining: 4,
+                        status: 'Open',
+                        location: 'BHOPAL',
+                        recruiter: 'John Doe',
+                        targetDate: '2024-03-31'
+                    },
+                    {
+                        id: Date.now() + 1,
+                        company: 'XYZ Ltd',
+                        department: 'HR',
+                        designation: 'HR Manager',
+                        total: 2,
+                        filled: 0,
+                        remaining: 2,
+                        status: 'Open',
+                        location: 'HO',
+                        recruiter: 'Jane Smith',
+                        targetDate: '2024-02-28'
+                    }
+                ];
+            }
+        }
 
-            function renderVacanciesTable() {
-                const tableBody = document.getElementById('vacanciesTable');
-                
-                tableBody.innerHTML = vacancies.map(vacancy => `
-                    <tr>
-                        <td>${vacancy.company}</td>
-                        <td>${vacancy.department}</td>
-                        <td>${vacancy.designation}</td>
-                        <td>${vacancy.total}</td>
-                        <td>${vacancy.filled}</td>
-                        <td>${vacancy.remaining}</td>
-                        <td>
-                            <span class="status-badge ${vacancy.status === 'Filled' ? 'status-joined' : 'status-applied'}">
-                                ${vacancy.status}
-                            </span>
-                        </td>
-                        <td>${vacancy.location}</td>
-                        <td>${vacancy.recruiter}</td>
-                        <td>
-                            <button class="action-btn" onclick="editVacancy(${vacancy.id})" style="background: #3498db; color: white;">
+        // Render tables
+        function renderCandidatesTable() {
+            const tableBody = document.getElementById('candidatesTable');
+            const filteredCandidates = getFilteredCandidates();
+            
+            tableBody.innerHTML = filteredCandidates.map((candidate, index) => `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${candidate.recruiter}</td>
+                    <td>${candidate.name}</td>
+                    <td>${candidate.email}</td>
+                    <td>${candidate.currentDesignation}</td>
+                    <td>₹${candidate.currentCTC} LPA</td>
+                    <td>${candidate.currentCompany}</td>
+                    <td>${candidate.applyFor}</td>
+                    <td>${candidate.hike ? candidate.hike + '%' : '-'}</td>
+                    <td>${candidate.afterHikeCTC ? '₹' + candidate.afterHikeCTC.toFixed(2) + ' LPA' : '-'}</td>
+                    <td><span class="status-badge status-${candidate.status.toLowerCase().replace(' ', '-')}">${candidate.status}</span></td>
+                    <td>${candidate.doj || '-'}</td>
+                    <td>${candidate.location || '-'}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="action-btn" onclick="editCandidate(${candidate.id})" style="background: #2196F3; color: white;">
                                 <i class="fas fa-edit"></i> Edit
                             </button>
-                            <button class="action-btn" onclick="deleteVacancy(${vacancy.id})" style="background: #e74c3c; color: white;">
-                                <i class="fas fa-trash"></i> Delete
+                            <button class="action-btn" onclick="changeStatus(${candidate.id})" style="background: #4CAF50; color: white;">
+                                <i class="fas fa-exchange-alt"></i> Status
                             </button>
-                        </td>
-                    </tr>
-                `).join('');
-            }
+                            <button class="action-btn" onclick="sendEmailModal('${candidate.email}', '${candidate.name}')" style="background: #9c27b0; color: white;">
+                                <i class="fas fa-envelope"></i> Email
+                            </button>
+                            <button class="action-btn" onclick="moveToBackout(${candidate.id})" style="background: #f44336; color: white;">
+                                <i class="fas fa-user-slash"></i> Backout
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
 
-            // Filter functions
-            function getFilteredCandidates() {
+        function renderBackoutTable() {
+            const tableBody = document.getElementById('backoutTable');
+            
+            const filteredBackout = backoutCandidates.filter(candidate => {
                 const recruiterFilter = document.getElementById('filterRecruiter').value;
                 const yearFilter = document.getElementById('filterYear').value;
-                const deptFilter = document.getElementById('filterDepartment').value;
-                const desigFilter = document.getElementById('filterDesignation').value;
-                const statusFilter = document.getElementById('filterStatus').value;
                 
-                return candidates.filter(candidate => {
-                    if (recruiterFilter !== 'all' && candidate.recruiter !== recruiterFilter) return false;
-                    if (yearFilter !== 'all') {
-                        const year = new Date(candidate.dateCreated).getFullYear().toString();
-                        if (year !== yearFilter) return false;
-                    }
-                    if (statusFilter !== 'all' && candidate.status !== statusFilter) return false;
-                    
-                    // Check if candidate's applied designation matches filter
-                    if (desigFilter !== 'all' && candidate.applyFor !== desigFilter) return false;
-                    
-                    // Check department from vacancy
-                    if (deptFilter !== 'all') {
-                        const vacancy = vacancies.find(v => v.designation === candidate.applyFor);
-                        if (!vacancy || vacancy.department !== deptFilter) return false;
-                    }
-                    
-                    return true;
-                });
-            }
+                if (recruiterFilter !== 'all' && candidate.recruiter !== recruiterFilter) return false;
+                if (yearFilter !== 'all') {
+                    const year = new Date(candidate.backoutDate).getFullYear().toString();
+                    if (year !== yearFilter) return false;
+                }
+                
+                return true;
+            });
+            
+            tableBody.innerHTML = filteredBackout.map((candidate, index) => `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${candidate.recruiter}</td>
+                    <td>${candidate.name}</td>
+                    <td>${candidate.email}</td>
+                    <td>${candidate.applyFor}</td>
+                    <td>${new Date(candidate.backoutDate).toLocaleDateString()}</td>
+                    <td>${candidate.backoutReason || 'Not specified'}</td>
+                    <td>${candidate.currentCompany}</td>
+                    <td>
+                        <button class="action-btn" onclick="sendEmailModal('${candidate.email}', '${candidate.name}')" style="background: #9c27b0; color: white;">
+                            <i class="fas fa-envelope"></i> Email
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
 
-            function filterData() {
-                renderCandidatesTable();
-                renderBackoutTable();
-                updateDashboard();
+        function renderVacanciesTable() {
+            const tableBody = document.getElementById('vacanciesTable');
+            
+            tableBody.innerHTML = vacancies.map(vacancy => `
+                <tr>
+                    <td>${vacancy.company}</td>
+                    <td>${vacancy.department}</td>
+                    <td>${vacancy.designation}</td>
+                    <td>${vacancy.total}</td>
+                    <td>${vacancy.filled}</td>
+                    <td>${vacancy.remaining}</td>
+                    <td>
+                        <span class="status-badge ${vacancy.status === 'Filled' ? 'status-joined' : 'status-applied'}">
+                            ${vacancy.status}
+                        </span>
+                    </td>
+                    <td>${vacancy.location}</td>
+                    <td>${vacancy.recruiter}</td>
+                    <td>
+                        <button class="action-btn" onclick="editVacancy(${vacancy.id})" style="background: #2196F3; color: white;">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="action-btn" onclick="deleteVacancy(${vacancy.id})" style="background: #f44336; color: white;">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Filter functions
+        function getFilteredCandidates() {
+            const recruiterFilter = document.getElementById('filterRecruiter').value;
+            const yearFilter = document.getElementById('filterYear').value;
+            const deptFilter = document.getElementById('filterDepartment').value;
+            const desigFilter = document.getElementById('filterDesignation').value;
+            const statusFilter = document.getElementById('filterStatus').value;
+            
+            return candidates.filter(candidate => {
+                if (recruiterFilter !== 'all' && candidate.recruiter !== recruiterFilter) return false;
+                if (yearFilter !== 'all') {
+                    const year = new Date(candidate.dateCreated).getFullYear().toString();
+                    if (year !== yearFilter) return false;
+                }
+                if (statusFilter !== 'all' && candidate.status !== statusFilter) return false;
+                
+                // Check if candidate's applied designation matches filter
+                if (desigFilter !== 'all' && candidate.applyFor !== desigFilter) return false;
+                
+                // Check department from vacancy
+                if (deptFilter !== 'all') {
+                    const vacancy = vacancies.find(v => v.designation === candidate.applyFor);
+                    if (!vacancy || vacancy.department !== deptFilter) return false;
+                }
+                
+                return true;
+            });
+        }
+
+        function filterData() {
+            renderCandidatesTable();
+            renderBackoutTable();
+            updateDashboard();
+            updateCharts();
+        }
+
+        function clearFilters() {
+            document.getElementById('filterRecruiter').value = 'all';
+            document.getElementById('filterYear').value = 'all';
+            document.getElementById('filterDepartment').value = 'all';
+            document.getElementById('filterDesignation').value = 'all';
+            document.getElementById('filterStatus').value = 'all';
+            filterData();
+            showNotification('Filters cleared successfully!', 'success');
+        }
+
+        // Update filters dropdowns
+        function updateFilters() {
+            const recruiterSelect = document.getElementById('filterRecruiter');
+            const yearSelect = document.getElementById('filterYear');
+            const deptSelect = document.getElementById('filterDepartment');
+            const desigSelect = document.getElementById('filterDesignation');
+            const statusSelect = document.getElementById('filterStatus');
+            const applyDesigSelect = document.getElementById('applyForDesignation');
+            const recruiterNameSelect = document.getElementById('recruiterName');
+            const vacancyRecruiterSelect = document.getElementById('vacancyRecruiter');
+            const candidateStatusSelect = document.getElementById('candidateStatus');
+            const joinLocationSelect = document.getElementById('joinLocation');
+            const vacancyLocationSelect = document.getElementById('vacancyLocation');
+            const vacancyDepartmentSelect = document.getElementById('vacancyDepartment');
+            
+            // Update recruiters
+            recruiterSelect.innerHTML = '<option value="all">All Recruiters</option>' +
+                settings.recruiters.map(r => `<option value="${r}">${r}</option>`).join('');
+            
+            recruiterNameSelect.innerHTML = '<option value="">Select Recruiter</option>' +
+                settings.recruiters.map(r => `<option value="${r}">${r}</option>`).join('');
+            
+            vacancyRecruiterSelect.innerHTML = '<option value="">Select Recruiter</option>' +
+                settings.recruiters.map(r => `<option value="${r}">${r}</option>`).join('');
+            
+            // Update years
+            yearSelect.innerHTML = '<option value="all">All Years</option>' +
+                years.map(y => `<option value="${y}">${y}</option>`).join('');
+            
+            // Update departments
+            const allDepartments = [...new Set(vacancies.map(v => v.department).concat(settings.departments))];
+            deptSelect.innerHTML = '<option value="all">All Departments</option>' +
+                allDepartments.map(d => `<option value="${d}">${d}</option>`).join('');
+            
+            vacancyDepartmentSelect.innerHTML = '<option value="">Select Department</option>' +
+                allDepartments.map(d => `<option value="${d}">${d}</option>`).join('');
+            
+            // Update designations from vacancies and settings
+            const allDesignations = [...new Set(vacancies.map(v => v.designation).concat(settings.designations))];
+            desigSelect.innerHTML = '<option value="all">All Designations</option>' +
+                allDesignations.map(d => `<option value="${d}">${d}</option>`).join('');
+            
+            // Update apply for designation dropdown
+            applyDesigSelect.innerHTML = '<option value="">Select Designation</option>' +
+                allDesignations.map(d => `<option value="${d}">${d}</option>`).join('');
+            
+            // Update status
+            statusSelect.innerHTML = '<option value="all">All Status</option>' +
+                settings.statuses.map(s => `<option value="${s}">${s}</option>`).join('');
+            
+            candidateStatusSelect.innerHTML = '<option value="">Select Status</option>' +
+                settings.statuses.map(s => `<option value="${s}">${s}</option>`).join('');
+            
+            // Update locations
+            const allLocations = [...new Set(vacancies.map(v => v.location).concat(settings.locations))];
+            joinLocationSelect.innerHTML = '<option value="">Select Location</option>' +
+                allLocations.map(l => `<option value="${l}">${l}</option>`).join('');
+            
+            vacancyLocationSelect.innerHTML = '<option value="">Select Location</option>' +
+                allLocations.map(l => `<option value="${l}">${l}</option>`).join('');
+        }
+
+        // Tab functions
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabName + 'Tab').classList.add('active');
+            
+            // Activate corresponding button
+            event.currentTarget.classList.add('active');
+            
+            // Update charts if analytics tab
+            if (tabName === 'analytics') {
                 updateCharts();
             }
+        }
 
-            function clearFilters() {
-                document.getElementById('filterRecruiter').value = 'all';
-                document.getElementById('filterYear').value = 'all';
-                document.getElementById('filterDepartment').value = 'all';
-                document.getElementById('filterDesignation').value = 'all';
-                document.getElementById('filterStatus').value = 'all';
-                filterData();
-                showNotification('Filters cleared successfully!', 'success');
+        // Modal functions
+        function showAddCandidateModal() {
+            document.getElementById('addCandidateModal').style.display = 'block';
+            updateFilters();
+            
+            // Clear previous form
+            document.getElementById('candidateForm').reset();
+            
+            // Reset DOJ field visibility
+            toggleDOJField();
+            
+            // Set today's date as default for DOJ
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('dateOfJoining').value = today;
+            document.getElementById('dateOfJoining').min = today;
+            
+            // Calculate new CTC when values change
+            document.getElementById('currentCTC').addEventListener('input', calculateNewCTC);
+            document.getElementById('hikePercentage').addEventListener('input', calculateNewCTC);
+            
+            // Reset submit button
+            const submitBtn = document.querySelector('#candidateForm button[type="submit"]');
+            submitBtn.textContent = 'Add Candidate';
+            submitBtn.onclick = function(e) {
+                e.preventDefault();
+                addCandidate(e);
+            };
+        }
+
+        function showAddVacancyModal() {
+            document.getElementById('addVacancyModal').style.display = 'block';
+            updateFilters();
+            
+            // Clear form
+            document.getElementById('vacancyForm').reset();
+            
+            // Set default target date (3 months from now)
+            const futureDate = new Date();
+            futureDate.setMonth(futureDate.getMonth() + 3);
+        }
+
+        function showSettingsModal() {
+            document.getElementById('settingsModal').style.display = 'block';
+            loadSettingsLists();
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
             }
+        }
 
-            // Update filters dropdowns
-            function updateFilters() {
-                const recruiterSelect = document.getElementById('filterRecruiter');
-                const yearSelect = document.getElementById('filterYear');
-                const deptSelect = document.getElementById('filterDepartment');
-                const desigSelect = document.getElementById('filterDesignation');
-                const statusSelect = document.getElementById('filterStatus');
-                const applyDesigSelect = document.getElementById('applyForDesignation');
-                const recruiterNameSelect = document.getElementById('recruiterName');
-                const vacancyRecruiterSelect = document.getElementById('vacancyRecruiter');
-                const candidateStatusSelect = document.getElementById('candidateStatus');
-                const joinLocationSelect = document.getElementById('joinLocation');
-                const vacancyLocationSelect = document.getElementById('vacancyLocation');
-                const vacancyDepartmentSelect = document.getElementById('vacancyDepartment');
-                
-                // Update recruiters
-                recruiterSelect.innerHTML = '<option value="all">All Recruiters</option>' +
-                    settings.recruiters.map(r => `<option value="${r}">${r}</option>`).join('');
-                
-                recruiterNameSelect.innerHTML = '<option value="">Select Recruiter</option>' +
-                    settings.recruiters.map(r => `<option value="${r}">${r}</option>`).join('');
-                
-                vacancyRecruiterSelect.innerHTML = '<option value="">Select Recruiter</option>' +
-                    settings.recruiters.map(r => `<option value="${r}">${r}</option>`).join('');
-                
-                // Update years
-                yearSelect.innerHTML = '<option value="all">All Years</option>' +
-                    years.map(y => `<option value="${y}">${y}</option>`).join('');
-                
-                // Update departments
-                const allDepartments = [...new Set(vacancies.map(v => v.department).concat(settings.departments))];
-                deptSelect.innerHTML = '<option value="all">All Departments</option>' +
-                    allDepartments.map(d => `<option value="${d}">${d}</option>`).join('');
-                
-                vacancyDepartmentSelect.innerHTML = '<option value="">Select Department</option>' +
-                    allDepartments.map(d => `<option value="${d}">${d}</option>`).join('');
-                
-                // Update designations from vacancies and settings
-                const allDesignations = [...new Set(vacancies.map(v => v.designation).concat(settings.designations))];
-                desigSelect.innerHTML = '<option value="all">All Designations</option>' +
-                    allDesignations.map(d => `<option value="${d}">${d}</option>`).join('');
-                
-                // Update apply for designation dropdown
-                applyDesigSelect.innerHTML = '<option value="">Select Designation</option>' +
-                    allDesignations.map(d => `<option value="${d}">${d}</option>`).join('');
-                
-                // Update status
-                statusSelect.innerHTML = '<option value="all">All Status</option>' +
-                    settings.statuses.map(s => `<option value="${s}">${s}</option>`).join('');
-                
-                candidateStatusSelect.innerHTML = '<option value="">Select Status</option>' +
-                    settings.statuses.map(s => `<option value="${s}">${s}</option>`).join('');
-                
-                // Update locations
-                const allLocations = [...new Set(vacancies.map(v => v.location).concat(settings.locations))];
-                joinLocationSelect.innerHTML = '<option value="">Select Location</option>' +
-                    allLocations.map(l => `<option value="${l}">${l}</option>`).join('');
-                
-                vacancyLocationSelect.innerHTML = '<option value="">Select Location</option>' +
-                    allLocations.map(l => `<option value="${l}">${l}</option>`).join('');
+        // Toggle DOJ field based on status
+        function toggleDOJField() {
+            const status = document.getElementById('candidateStatus').value;
+            const dojContainer = document.getElementById('dojFieldContainer');
+            const dojInput = document.getElementById('dateOfJoining');
+            
+            // Show DOJ field only for Selected or Joined status
+            if (status === 'Selected' || status === 'Joined') {
+                dojContainer.style.display = 'grid';
+                dojInput.required = true;
+            } else {
+                dojContainer.style.display = 'none';
+                dojInput.required = false;
             }
+        }
 
-            // Tab functions
-            function showTab(tabName) {
-                // Hide all tabs
-                document.querySelectorAll('.tab-content').forEach(tab => {
-                    tab.classList.remove('active');
-                });
+        // Calculate new CTC
+        function calculateNewCTC() {
+            const currentCTC = parseFloat(document.getElementById('currentCTC').value) || 0;
+            const hike = parseFloat(document.getElementById('hikePercentage').value) || 0;
+            const newCTC = currentCTC * (1 + hike / 100);
+            
+            // Show calculated value to user
+            const hikeField = document.getElementById('hikePercentage');
+            let span = hikeField.parentNode.querySelector('.calculated-ctc');
+            
+            if (!span) {
+                span = document.createElement('span');
+                span.className = 'calculated-ctc';
+                span.style.cssText = 'font-size: 12px; color: #4CAF50; margin-top: 5px;';
+                hikeField.parentNode.appendChild(span);
+            }
+            
+            if (!isNaN(newCTC) && currentCTC > 0) {
+                span.textContent = `New CTC: ₹${newCTC.toFixed(2)} LPA`;
+                span.style.color = '#4CAF50';
+            } else {
+                span.textContent = 'Enter valid CTC and hike %';
+                span.style.color = '#f44336';
+            }
+        }
+
+        // Add candidate
+        function addCandidate(event) {
+            event.preventDefault();
+            
+            const recruiter = document.getElementById('recruiterName').value;
+            const name = document.getElementById('candidateName').value;
+            const email = document.getElementById('candidateEmail').value;
+            const applyFor = document.getElementById('applyForDesignation').value;
+            const status = document.getElementById('candidateStatus').value;
+            const doj = document.getElementById('dateOfJoining').value;
+            
+            // Validate DOJ for Selected/Joined status
+            if ((status === 'Selected' || status === 'Joined') && !doj) {
+                showNotification('Date of Joining is required for Selected/Joined status!', 'error');
+                return;
+            }
+            
+            if (!recruiter || !name || !email || !applyFor || !status) {
+                showNotification('Please fill all required fields!', 'error');
+                return;
+            }
+            
+            const newCandidate = {
+                id: Date.now(),
+                recruiter: recruiter,
+                name: name,
+                email: email,
+                currentDesignation: document.getElementById('currentDesignation').value,
+                currentCTC: parseFloat(document.getElementById('currentCTC').value) || 0,
+                currentCompany: document.getElementById('currentCompany').value,
+                companyLocation: document.getElementById('companyLocation').value,
+                applyFor: applyFor,
+                hike: parseFloat(document.getElementById('hikePercentage').value) || 0,
+                status: status,
+                doj: status === 'Selected' || status === 'Joined' ? doj : '',
+                location: document.getElementById('joinLocation').value,
+                dateCreated: new Date().toISOString()
+            };
+            
+            // Calculate after hike CTC
+            newCandidate.afterHikeCTC = newCandidate.currentCTC * (1 + newCandidate.hike / 100);
+            
+            candidates.push(newCandidate);
+            saveCandidates();
+            
+            // Update vacancy filled count if candidate is selected/joined
+            if (newCandidate.status === 'Selected' || newCandidate.status === 'Joined') {
+                updateVacancyCounts();
+            }
+            
+            // If status is backout, move to backout list
+            if (newCandidate.status === 'Backout') {
+                moveToBackout(newCandidate.id, true);
+            }
+            
+            renderCandidatesTable();
+            updateDashboard();
+            updateFilters();
+            closeModal('addCandidateModal');
+            document.getElementById('candidateForm').reset();
+            
+            showNotification('Candidate added successfully!', 'success');
+            
+            // Auto-send email if selected
+            if (newCandidate.status === 'Selected') {
+                setTimeout(() => {
+                    sendAutoEmail(newCandidate.email, newCandidate.name, 'selected');
+                }, 1000);
+            }
+        }
+
+        // Add vacancy
+        function addVacancy(event) {
+            event.preventDefault();
+            
+            const company = document.getElementById('vacancyCompany').value;
+            const department = document.getElementById('vacancyDepartment').value;
+            const designation = document.getElementById('vacancyDesignation').value;
+            const total = parseInt(document.getElementById('totalVacancies').value);
+            
+            if (!company || !department || !designation || !total) {
+                showNotification('Please fill all required fields!', 'error');
+                return;
+            }
+            
+            const newVacancy = {
+                id: Date.now(),
+                company: company,
+                department: department,
+                designation: designation,
+                total: total,
+                filled: 0,
+                remaining: total,
+                status: 'Open',
+                location: document.getElementById('vacancyLocation').value,
+                recruiter: document.getElementById('vacancyRecruiter').value || 'Not assigned',
+                targetDate: new Date(new Date().setMonth(new Date().getMonth() + 3)).toISOString().split('T')[0]
+            };
+            
+            vacancies.push(newVacancy);
+            saveVacancies();
+            
+            renderVacanciesTable();
+            updateDashboard();
+            updateFilters();
+            closeModal('addVacancyModal');
+            document.getElementById('vacancyForm').reset();
+            
+            showNotification('Vacancy added successfully!', 'success');
+        }
+
+        // Move candidate to backout
+        function moveToBackout(candidateId, fromAdd = false) {
+            const candidateIndex = candidates.findIndex(c => c.id === candidateId);
+            if (candidateIndex === -1) return;
+            
+            const candidate = candidates[candidateIndex];
+            let backoutReason = 'Candidate declined offer';
+            
+            if (!fromAdd) {
+                backoutReason = prompt('Enter backout reason:', 'Candidate declined offer');
+                if (backoutReason === null) return; // User cancelled
+            }
+            
+            candidate.backoutDate = new Date().toISOString();
+            candidate.backoutReason = backoutReason;
+            
+            backoutCandidates.push(candidate);
+            candidates.splice(candidateIndex, 1);
+            
+            // Update vacancy counts
+            updateVacancyCounts();
+            
+            saveCandidates();
+            saveBackoutCandidates();
+            
+            renderCandidatesTable();
+            renderBackoutTable();
+            updateDashboard();
+            
+            // Send backout acknowledgment email
+            if (!fromAdd) {
+                sendAutoEmail(candidate.email, candidate.name, 'backout');
+                showNotification('Candidate moved to backout list', 'success');
+            }
+        }
+
+        // Update vacancy counts
+        function updateVacancyCounts() {
+            vacancies.forEach(vacancy => {
+                const filledCount = candidates.filter(c => 
+                    c.applyFor === vacancy.designation && 
+                    (c.status === 'Selected' || c.status === 'Joined')
+                ).length;
                 
-                // Remove active class from all buttons
-                document.querySelectorAll('.tab-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                
-                // Show selected tab
-                document.getElementById(tabName + 'Tab').classList.add('active');
-                
-                // Activate corresponding button
-                event.currentTarget.classList.add('active');
-                
-                // Update charts if analytics tab
-                if (tabName === 'analytics') {
-                    updateCharts();
+                vacancy.filled = filledCount;
+                vacancy.remaining = vacancy.total - filledCount;
+                vacancy.status = vacancy.remaining === 0 ? 'Filled' : 'Open';
+            });
+            
+            saveVacancies();
+            renderVacanciesTable();
+        }
+
+        // Update dashboard
+        function updateDashboard() {
+            const filteredCandidates = getFilteredCandidates();
+            
+            document.getElementById('totalCandidates').textContent = filteredCandidates.length;
+            document.getElementById('selectedCandidates').textContent = 
+                filteredCandidates.filter(c => c.status === 'Selected' || c.status === 'Joined').length;
+            document.getElementById('backoutCandidates').textContent = backoutCandidates.length;
+            document.getElementById('pendingJoining').textContent = 
+                filteredCandidates.filter(c => c.status === 'Selected' && !c.doj).length;
+            
+            const openVacancies = vacancies.reduce((sum, v) => sum + v.remaining, 0);
+            document.getElementById('openVacancies').textContent = openVacancies;
+        }
+
+        // Settings Management
+        function loadSettingsLists() {
+            // Load recruiters
+            const recruitersList = document.getElementById('recruitersList');
+            recruitersList.innerHTML = settings.recruiters.map(recruiter => `
+                <div class="settings-item">
+                    <i class="fas fa-user"></i>
+                    <span>${recruiter}</span>
+                    <button onclick="removeRecruiter('${recruiter}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+            
+            // Load departments
+            const departmentsList = document.getElementById('departmentsList');
+            departmentsList.innerHTML = settings.departments.map(dept => `
+                <div class="settings-item">
+                    <i class="fas fa-building"></i>
+                    <span>${dept}</span>
+                    <button onclick="removeDepartment('${dept}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+            
+            // Load designations
+            const designationsList = document.getElementById('designationsList');
+            designationsList.innerHTML = settings.designations.map(desig => `
+                <div class="settings-item">
+                    <i class="fas fa-user-tag"></i>
+                    <span>${desig}</span>
+                    <button onclick="removeDesignation('${desig}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+            
+            // Load statuses
+            const statusesList = document.getElementById('statusesList');
+            statusesList.innerHTML = settings.statuses.map(status => `
+                <div class="settings-item">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>${status}</span>
+                    <button onclick="removeStatus('${status}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+            
+            // Load locations
+            const locationsList = document.getElementById('locationsList');
+            locationsList.innerHTML = settings.locations.map(location => `
+                <div class="settings-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>${location}</span>
+                    <button onclick="removeLocation('${location}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function addRecruiter() {
+            const input = document.getElementById('newRecruiter');
+            const recruiter = input.value.trim();
+            
+            if (recruiter && !settings.recruiters.includes(recruiter)) {
+                settings.recruiters.push(recruiter);
+                saveSettings();
+                loadSettingsLists();
+                updateFilters();
+                input.value = '';
+                showNotification(`Recruiter "${recruiter}" added`, 'success');
+            } else if (settings.recruiters.includes(recruiter)) {
+                showNotification('Recruiter already exists!', 'error');
+            }
+        }
+
+        function removeRecruiter(recruiter) {
+            if (confirm(`Remove recruiter "${recruiter}"?`)) {
+                const index = settings.recruiters.indexOf(recruiter);
+                if (index > -1) {
+                    settings.recruiters.splice(index, 1);
+                    saveSettings();
+                    loadSettingsLists();
+                    updateFilters();
+                    showNotification(`Recruiter "${recruiter}" removed`, 'success');
                 }
             }
+        }
 
-            // Modal functions
-            function showAddCandidateModal() {
-                document.getElementById('addCandidateModal').style.display = 'block';
+        function addDepartment() {
+            const input = document.getElementById('newDepartment');
+            const department = input.value.trim();
+            
+            if (department && !settings.departments.includes(department)) {
+                settings.departments.push(department);
+                saveSettings();
+                loadSettingsLists();
                 updateFilters();
+                input.value = '';
+                showNotification(`Department "${department}" added`, 'success');
+            } else if (settings.departments.includes(department)) {
+                showNotification('Department already exists!', 'error');
+            }
+        }
+
+        function removeDepartment(department) {
+            if (confirm(`Remove department "${department}"?`)) {
+                const index = settings.departments.indexOf(department);
+                if (index > -1) {
+                    settings.departments.splice(index, 1);
+                    saveSettings();
+                    loadSettingsLists();
+                    updateFilters();
+                    showNotification(`Department "${department}" removed`, 'success');
+                }
+            }
+        }
+
+        function addDesignation() {
+            const input = document.getElementById('newDesignation');
+            const designation = input.value.trim();
+            
+            if (designation && !settings.designations.includes(designation)) {
+                settings.designations.push(designation);
+                saveSettings();
+                loadSettingsLists();
+                updateFilters();
+                input.value = '';
+                showNotification(`Designation "${designation}" added`, 'success');
+            } else if (settings.designations.includes(designation)) {
+                showNotification('Designation already exists!', 'error');
+            }
+        }
+
+        function removeDesignation(designation) {
+            if (confirm(`Remove designation "${designation}"?`)) {
+                const index = settings.designations.indexOf(designation);
+                if (index > -1) {
+                    settings.designations.splice(index, 1);
+                    saveSettings();
+                    loadSettingsLists();
+                    updateFilters();
+                    showNotification(`Designation "${designation}" removed`, 'success');
+                }
+            }
+        }
+
+        function addStatus() {
+            const input = document.getElementById('newStatus');
+            const status = input.value.trim();
+            
+            if (status && !settings.statuses.includes(status)) {
+                settings.statuses.push(status);
+                saveSettings();
+                loadSettingsLists();
+                updateFilters();
+                input.value = '';
+                showNotification(`Status "${status}" added`, 'success');
+            } else if (settings.statuses.includes(status)) {
+                showNotification('Status already exists!', 'error');
+            }
+        }
+
+        function removeStatus(status) {
+            if (confirm(`Remove status "${status}"?`)) {
+                const index = settings.statuses.indexOf(status);
+                if (index > -1) {
+                    settings.statuses.splice(index, 1);
+                    saveSettings();
+                    loadSettingsLists();
+                    updateFilters();
+                    showNotification(`Status "${status}" removed`, 'success');
+                }
+            }
+        }
+
+        function addLocation() {
+            const input = document.getElementById('newLocation');
+            const location = input.value.trim();
+            
+            if (location && !settings.locations.includes(location)) {
+                settings.locations.push(location);
+                saveSettings();
+                loadSettingsLists();
+                updateFilters();
+                input.value = '';
+                showNotification(`Location "${location}" added`, 'success');
+            } else if (settings.locations.includes(location)) {
+                showNotification('Location already exists!', 'error');
+            }
+        }
+
+        function removeLocation(location) {
+            if (confirm(`Remove location "${location}"?`)) {
+                const index = settings.locations.indexOf(location);
+                if (index > -1) {
+                    settings.locations.splice(index, 1);
+                    saveSettings();
+                    loadSettingsLists();
+                    updateFilters();
+                    showNotification(`Location "${location}" removed`, 'success');
+                }
+            }
+        }
+
+        // Email functionality
+        function sendEmailModal(email, name) {
+            document.getElementById('emailTo').value = email;
+            document.getElementById('emailModal').style.display = 'block';
+            updateEmailTemplate();
+        }
+
+        function updateEmailTemplate() {
+            const emailType = document.getElementById('emailType').value;
+            const email = document.getElementById('emailTo').value;
+            const name = email.split('@')[0];
+            let subject = '';
+            let message = '';
+            
+            switch(emailType) {
+                case 'selected':
+                    subject = 'Congratulations! You have been selected';
+                    message = `Dear ${name},\n\nCongratulations! We are pleased to inform you that you have been selected for the position.\n\nPlease let us know your availability for further discussion regarding the offer.\n\nBest regards,\nHR Team`;
+                    break;
+                case 'rejected':
+                    subject = 'Regarding Your Application';
+                    message = `Dear ${name},\n\nThank you for your interest in our company and for taking the time to interview with us.\n\nAfter careful consideration, we have decided to move forward with other candidates whose qualifications more closely match our current needs.\n\nWe wish you the best in your job search.\n\nBest regards,\nHR Team`;
+                    break;
+                case 'joining':
+                    subject = 'Joining Details and Documents Required';
+                    const candidate = candidates.find(c => c.email === email);
+                    const doj = candidate && candidate.doj ? new Date(candidate.doj).toLocaleDateString() : '[Date]';
+                    const location = candidate && candidate.location ? candidate.location : '[Location]';
+                    message = `Dear ${name},\n\nWe are delighted to have you onboard!\n\nPlease find below your joining details:\nDate: ${doj}\nTime: 9:00 AM\nLocation: ${location}\n\nDocuments required:\n1. Resume\n2. Educational certificates\n3. Previous employment certificates\n4. ID proof (Aadhar/PAN/Passport)\n5. Passport size photos (2 copies)\n6. Bank account details\n\nPlease report to the reception on your joining date.\n\nBest regards,\nHR Team`;
+                    break;
+                case 'backout':
+                    subject = 'Acknowledgment of Withdrawal';
+                    message = `Dear ${name},\n\nWe acknowledge your decision to withdraw from the selection process.\n\nWe appreciate your interest in our organization and wish you the best in your future endeavors.\n\nBest regards,\nHR Team`;
+                    break;
+            }
+            
+            document.getElementById('emailSubject').value = subject;
+            document.getElementById('emailMessage').value = message;
+        }
+
+        function sendEmail() {
+            const to = document.getElementById('emailTo').value;
+            const subject = document.getElementById('emailSubject').value;
+            const message = document.getElementById('emailMessage').value;
+            
+            // Using mailto link for demo (in real app, use EmailJS or backend)
+            const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+            window.open(mailtoLink);
+            
+            showNotification('Email client opened. Click send to send the email.', 'info');
+            closeModal('emailModal');
+        }
+
+        function sendAutoEmail(email, name, type) {
+            let subject = '';
+            let message = '';
+            
+            switch(type) {
+                case 'selected':
+                    subject = 'Congratulations! You have been selected';
+                    message = `Dear ${name},\n\nCongratulations! We are pleased to inform you that you have been selected for the position.\n\nOur HR team will contact you shortly with the offer details.\n\nBest regards,\nHR Team`;
+                    break;
+                case 'backout':
+                    subject = 'Acknowledgment of Withdrawal';
+                    message = `Dear ${name},\n\nWe acknowledge your decision to withdraw from the selection process.\n\nWe appreciate your interest in our organization and wish you the best in your future endeavors.\n\nBest regards,\nHR Team`;
+                    break;
+            }
+            
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+            
+            // Show notification instead of automatically opening email client
+            showNotification(`${name} has been ${type}. Email template ready to send.`, 'info');
+        }
+
+        // Export to Excel
+        function exportToExcel() {
+            if (candidates.length === 0) {
+                showNotification('No data to export!', 'error');
+                return;
+            }
+            
+            // Create CSV content for candidates
+            let csv = 'S.No,Recruiter,Candidate Name,Email,Current Designation,Current CTC,Company,Apply For,Hike %,New CTC,Status,DOJ,Location\n';
+            
+            candidates.forEach((candidate, index) => {
+                csv += `${index + 1},${candidate.recruiter},${candidate.name},${candidate.email},${candidate.currentDesignation},${candidate.currentCTC},${candidate.currentCompany},${candidate.applyFor},${candidate.hike || 0},${candidate.afterHikeCTC || ''},${candidate.status},${candidate.doj || ''},${candidate.location || ''}\n`;
+            });
+            
+            // Add vacancies data
+            csv += '\n\nVacancies Data\n';
+            csv += 'Company,Department,Designation,Total Vacancies,Filled,Remaining,Status,Location,Recruiter\n';
+            
+            vacancies.forEach(vacancy => {
+                csv += `${vacancy.company},${vacancy.department},${vacancy.designation},${vacancy.total},${vacancy.filled},${vacancy.remaining},${vacancy.status},${vacancy.location},${vacancy.recruiter}\n`;
+            });
+            
+            // Create and download file
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `onboarding-tracker-${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            showNotification('Data exported successfully as CSV!', 'success');
+        }
+
+        // Charts
+        let vacancyChart, hiringChart, recruiterChart, statusChart;
+
+        function initializeCharts() {
+            const ctx1 = document.getElementById('vacancyChart').getContext('2d');
+            const ctx2 = document.getElementById('hiringChart').getContext('2d');
+            const ctx3 = document.getElementById('recruiterChart').getContext('2d');
+            const ctx4 = document.getElementById('statusChart').getContext('2d');
+            
+            vacancyChart = new Chart(ctx1, {
+                type: 'pie',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        data: [],
+                        backgroundColor: ['#4CAF50', '#f44336', '#2196F3', '#ff9800', '#9c27b0']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+            
+            hiringChart = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Candidates Joined',
+                        data: Array(12).fill(0),
+                        borderColor: '#2196F3',
+                        backgroundColor: 'rgba(33, 150, 243, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            recruiterChart = new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Candidates Placed',
+                        data: [],
+                        backgroundColor: '#4CAF50'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            statusChart = new Chart(ctx4, {
+                type: 'doughnut',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        data: [],
+                        backgroundColor: ['#4CAF50', '#2196F3', '#ff9800', '#f44336', '#9c27b0', '#607d8b']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+            
+            updateCharts();
+        }
+
+        function updateCharts() {
+            // Update vacancy chart
+            const vacancyStatus = vacancies.reduce((acc, v) => {
+                acc[v.status] = (acc[v.status] || 0) + 1;
+                return acc;
+            }, {});
+            
+            vacancyChart.data.labels = Object.keys(vacancyStatus);
+            vacancyChart.data.datasets[0].data = Object.values(vacancyStatus);
+            vacancyChart.update();
+            
+            // Update hiring trend chart
+            const monthlyData = Array(12).fill(0);
+            candidates.forEach(c => {
+                if (c.doj) {
+                    const month = new Date(c.doj).getMonth();
+                    monthlyData[month]++;
+                }
+            });
+            hiringChart.data.datasets[0].data = monthlyData;
+            hiringChart.update();
+            
+            // Update recruiter chart
+            const recruiterData = {};
+            candidates.forEach(c => {
+                if (c.status === 'Selected' || c.status === 'Joined') {
+                    recruiterData[c.recruiter] = (recruiterData[c.recruiter] || 0) + 1;
+                }
+            });
+            
+            recruiterChart.data.labels = Object.keys(recruiterData);
+            recruiterChart.data.datasets[0].data = Object.values(recruiterData);
+            recruiterChart.update();
+            
+            // Update status chart
+            const statusData = {};
+            candidates.forEach(c => {
+                statusData[c.status] = (statusData[c.status] || 0) + 1;
+            });
+            
+            statusChart.data.labels = Object.keys(statusData);
+            statusChart.data.datasets[0].data = Object.values(statusData);
+            statusChart.update();
+        }
+
+        // Edit functions
+        function editCandidate(id) {
+            const candidate = candidates.find(c => c.id === id);
+            if (candidate) {
+                // Populate modal with candidate data
+                document.getElementById('recruiterName').value = candidate.recruiter;
+                document.getElementById('candidateName').value = candidate.name;
+                document.getElementById('candidateEmail').value = candidate.email;
+                document.getElementById('currentDesignation').value = candidate.currentDesignation;
+                document.getElementById('currentCTC').value = candidate.currentCTC;
+                document.getElementById('hikePercentage').value = candidate.hike;
+                document.getElementById('currentCompany').value = candidate.currentCompany;
+                document.getElementById('companyLocation').value = candidate.companyLocation;
+                document.getElementById('applyForDesignation').value = candidate.applyFor;
+                document.getElementById('candidateStatus').value = candidate.status;
+                document.getElementById('dateOfJoining').value = candidate.doj;
+                document.getElementById('joinLocation').value = candidate.location;
                 
-                // Clear previous form
-                document.getElementById('candidateForm').reset();
+                // Update filters and show modal
+                updateFilters();
+                document.getElementById('addCandidateModal').style.display = 'block';
                 
-                // Reset DOJ field visibility
+                // Toggle DOJ field
                 toggleDOJField();
                 
-                // Set today's date as default for DOJ
-                const today = new Date().toISOString().split('T')[0];
-                document.getElementById('dateOfJoining').value = today;
-                document.getElementById('dateOfJoining').min = today;
+                // Change button text
+                const submitBtn = document.querySelector('#candidateForm button[type="submit"]');
+                submitBtn.textContent = 'Update Candidate';
+                submitBtn.onclick = function(e) {
+                    e.preventDefault();
+                    updateCandidate(id);
+                };
                 
-                // Calculate new CTC when values change
-                document.getElementById('currentCTC').addEventListener('input', calculateNewCTC);
-                document.getElementById('hikePercentage').addEventListener('input', calculateNewCTC);
+                showNotification(`Editing candidate: ${candidate.name}`, 'info');
+            }
+        }
+
+        function updateCandidate(id) {
+            const candidateIndex = candidates.findIndex(c => c.id === id);
+            if (candidateIndex === -1) return;
+            
+            const oldStatus = candidates[candidateIndex].status;
+            const status = document.getElementById('candidateStatus').value;
+            const doj = document.getElementById('dateOfJoining').value;
+            
+            // Validate DOJ for Selected/Joined status
+            if ((status === 'Selected' || status === 'Joined') && !doj) {
+                showNotification('Date of Joining is required for Selected/Joined status!', 'error');
+                return;
+            }
+            
+            candidates[candidateIndex] = {
+                id: id,
+                recruiter: document.getElementById('recruiterName').value,
+                name: document.getElementById('candidateName').value,
+                email: document.getElementById('candidateEmail').value,
+                currentDesignation: document.getElementById('currentDesignation').value,
+                currentCTC: parseFloat(document.getElementById('currentCTC').value) || 0,
+                currentCompany: document.getElementById('currentCompany').value,
+                companyLocation: document.getElementById('companyLocation').value,
+                applyFor: document.getElementById('applyForDesignation').value,
+                hike: parseFloat(document.getElementById('hikePercentage').value) || 0,
+                status: status,
+                doj: status === 'Selected' || status === 'Joined' ? doj : '',
+                location: document.getElementById('joinLocation').value,
+                dateCreated: candidates[candidateIndex].dateCreated
+            };
+            
+            // Calculate after hike CTC
+            candidates[candidateIndex].afterHikeCTC = candidates[candidateIndex].currentCTC * 
+                (1 + candidates[candidateIndex].hike / 100);
+            
+            // If status changed to/from Selected/Joined, update vacancies
+            if (oldStatus !== candidates[candidateIndex].status && 
+                (oldStatus === 'Selected' || oldStatus === 'Joined' || 
+                 candidates[candidateIndex].status === 'Selected' || 
+                 candidates[candidateIndex].status === 'Joined')) {
+                updateVacancyCounts();
+            }
+            
+            // If moved to backout
+            if (candidates[candidateIndex].status === 'Backout') {
+                moveToBackout(id);
+            } else {
+                saveCandidates();
+                renderCandidatesTable();
+                updateDashboard();
+                updateFilters();
+                closeModal('addCandidateModal');
                 
-                // Reset submit button
+                // Reset form button
                 const submitBtn = document.querySelector('#candidateForm button[type="submit"]');
                 submitBtn.textContent = 'Add Candidate';
                 submitBtn.onclick = function(e) {
                     e.preventDefault();
                     addCandidate(e);
                 };
-            }
-
-            function showAddVacancyModal() {
-                document.getElementById('addVacancyModal').style.display = 'block';
-                updateFilters();
                 
-                // Clear form
-                document.getElementById('vacancyForm').reset();
-                
-                // Set default target date (3 months from now)
-                const futureDate = new Date();
-                futureDate.setMonth(futureDate.getMonth() + 3);
-            }
-
-            function showSettingsModal() {
-                document.getElementById('settingsModal').style.display = 'block';
-                loadSettingsLists();
-            }
-
-            function closeModal(modalId) {
-                document.getElementById(modalId).style.display = 'none';
-            }
-
-            // Close modal when clicking outside
-            window.onclick = function(event) {
-                if (event.target.classList.contains('modal')) {
-                    event.target.style.display = 'none';
-                }
-            }
-
-            // Toggle DOJ field based on status
-            function toggleDOJField() {
-                const status = document.getElementById('candidateStatus').value;
-                const dojContainer = document.getElementById('dojFieldContainer');
-                const dojInput = document.getElementById('dateOfJoining');
-                
-                // Show DOJ field only for Selected or Joined status
-                if (status === 'Selected' || status === 'Joined') {
-                    dojContainer.style.display = 'grid';
-                    dojInput.required = true;
-                } else {
-                    dojContainer.style.display = 'none';
-                    dojInput.required = false;
-                }
-            }
-
-            // Calculate new CTC
-            function calculateNewCTC() {
-                const currentCTC = parseFloat(document.getElementById('currentCTC').value) || 0;
-                const hike = parseFloat(document.getElementById('hikePercentage').value) || 0;
-                const newCTC = currentCTC * (1 + hike / 100);
-                
-                // Show calculated value to user
-                const hikeField = document.getElementById('hikePercentage');
-                let span = hikeField.parentNode.querySelector('.calculated-ctc');
-                
-                if (!span) {
-                    span = document.createElement('span');
-                    span.className = 'calculated-ctc';
-                    span.style.cssText = 'font-size: 12px; color: #2ecc71; margin-top: 5px;';
-                    hikeField.parentNode.appendChild(span);
-                }
-                
-                if (!isNaN(newCTC) && currentCTC > 0) {
-                    span.textContent = `New CTC: ₹${newCTC.toFixed(2)} LPA`;
-                    span.style.color = '#2ecc71';
-                } else {
-                    span.textContent = 'Enter valid CTC and hike %';
-                    span.style.color = '#e74c3c';
-                }
-            }
-
-            // Add candidate
-            function addCandidate(event) {
-                event.preventDefault();
-                
-                const recruiter = document.getElementById('recruiterName').value;
-                const name = document.getElementById('candidateName').value;
-                const email = document.getElementById('candidateEmail').value;
-                const applyFor = document.getElementById('applyForDesignation').value;
-                const status = document.getElementById('candidateStatus').value;
-                const doj = document.getElementById('dateOfJoining').value;
-                
-                // Validate DOJ for Selected/Joined status
-                if ((status === 'Selected' || status === 'Joined') && !doj) {
-                    showNotification('Date of Joining is required for Selected/Joined status!', 'error');
-                    return;
-                }
-                
-                if (!recruiter || !name || !email || !applyFor || !status) {
-                    showNotification('Please fill all required fields!', 'error');
-                    return;
-                }
-                
-                const newCandidate = {
-                    id: Date.now(),
-                    recruiter: recruiter,
-                    name: name,
-                    email: email,
-                    currentDesignation: document.getElementById('currentDesignation').value,
-                    currentCTC: parseFloat(document.getElementById('currentCTC').value) || 0,
-                    currentCompany: document.getElementById('currentCompany').value,
-                    companyLocation: document.getElementById('companyLocation').value,
-                    applyFor: applyFor,
-                    hike: parseFloat(document.getElementById('hikePercentage').value) || 0,
-                    status: status,
-                    doj: status === 'Selected' || status === 'Joined' ? doj : '',
-                    location: document.getElementById('joinLocation').value,
-                    dateCreated: new Date().toISOString()
-                };
-                
-                // Calculate after hike CTC
-                newCandidate.afterHikeCTC = newCandidate.currentCTC * (1 + newCandidate.hike / 100);
-                
-                candidates.push(newCandidate);
-                saveCandidates();
-                
-                // Update vacancy filled count if candidate is selected/joined
-                if (newCandidate.status === 'Selected' || newCandidate.status === 'Joined') {
-                    updateVacancyCounts();
-                }
-                
-                // If status is backout, move to backout list
-                if (newCandidate.status === 'Backout') {
-                    moveToBackout(newCandidate.id, true);
-                }
-                
-                renderCandidatesTable();
-                updateDashboard();
-                updateFilters();
-                closeModal('addCandidateModal');
                 document.getElementById('candidateForm').reset();
-                
-                showNotification('Candidate added successfully!', 'success');
-                
-                // Auto-send email if selected
-                if (newCandidate.status === 'Selected') {
-                    setTimeout(() => {
-                        sendAutoEmail(newCandidate.email, newCandidate.name, 'selected');
-                    }, 1000);
+                showNotification('Candidate updated successfully!', 'success');
+            }
+        }
+
+        function changeStatus(id) {
+            const candidate = candidates.find(c => c.id === id);
+            if (candidate) {
+                const newStatus = prompt('Enter new status:', candidate.status);
+                if (newStatus && newStatus !== candidate.status) {
+                    const oldStatus = candidate.status;
+                    
+                    // Check if DOJ is required
+                    let doj = candidate.doj;
+                    if ((newStatus === 'Selected' || newStatus === 'Joined') && !doj) {
+                        doj = prompt('Enter Date of Joining (YYYY-MM-DD):', new Date().toISOString().split('T')[0]);
+                        if (!doj) {
+                            showNotification('Date of Joining is required for Selected/Joined status!', 'error');
+                            return;
+                        }
+                    }
+                    
+                    candidate.status = newStatus;
+                    if ((newStatus === 'Selected' || newStatus === 'Joined') && doj) {
+                        candidate.doj = doj;
+                    }
+                    
+                    // Update vacancy counts if status changed to/from Selected/Joined
+                    if (oldStatus !== newStatus && 
+                        (oldStatus === 'Selected' || oldStatus === 'Joined' || 
+                         newStatus === 'Selected' || newStatus === 'Joined')) {
+                        updateVacancyCounts();
+                    }
+                    
+                    // If moved to backout
+                    if (newStatus === 'Backout') {
+                        moveToBackout(id);
+                    } else {
+                        saveCandidates();
+                        renderCandidatesTable();
+                        updateDashboard();
+                        showNotification(`Status updated to: ${newStatus}`, 'success');
+                    }
                 }
             }
+        }
 
-            // Add vacancy
-            function addVacancy(event) {
-                event.preventDefault();
+        function editVacancy(id) {
+            const vacancy = vacancies.find(v => v.id === id);
+            if (vacancy) {
+                // Populate modal with vacancy data
+                document.getElementById('vacancyCompany').value = vacancy.company;
+                document.getElementById('vacancyDepartment').value = vacancy.department;
+                document.getElementById('vacancyDesignation').value = vacancy.designation;
+                document.getElementById('totalVacancies').value = vacancy.total;
+                document.getElementById('vacancyLocation').value = vacancy.location;
+                document.getElementById('vacancyRecruiter').value = vacancy.recruiter;
                 
-                const company = document.getElementById('vacancyCompany').value;
-                const department = document.getElementById('vacancyDepartment').value;
-                const designation = document.getElementById('vacancyDesignation').value;
-                const total = parseInt(document.getElementById('totalVacancies').value);
-                
-                if (!company || !department || !designation || !total) {
-                    showNotification('Please fill all required fields!', 'error');
-                    return;
-                }
-                
-                const newVacancy = {
-                    id: Date.now(),
-                    company: company,
-                    department: department,
-                    designation: designation,
-                    total: total,
-                    filled: 0,
-                    remaining: total,
-                    status: 'Open',
-                    location: document.getElementById('vacancyLocation').value,
-                    recruiter: document.getElementById('vacancyRecruiter').value || 'Not assigned',
-                    targetDate: new Date(new Date().setMonth(new Date().getMonth() + 3)).toISOString().split('T')[0]
-                };
-                
-                vacancies.push(newVacancy);
-                saveVacancies();
-                
-                renderVacanciesTable();
-                updateDashboard();
+                // Update filters and show modal
                 updateFilters();
-                closeModal('addVacancyModal');
-                document.getElementById('vacancyForm').reset();
+                document.getElementById('addVacancyModal').style.display = 'block';
                 
-                showNotification('Vacancy added successfully!', 'success');
-            }
-
-            // Move candidate to backout
-            function moveToBackout(candidateId, fromAdd = false) {
-                const candidateIndex = candidates.findIndex(c => c.id === candidateId);
-                if (candidateIndex === -1) return;
-                
-                const candidate = candidates[candidateIndex];
-                let backoutReason = 'Candidate declined offer';
-                
-                if (!fromAdd) {
-                    backoutReason = prompt('Enter backout reason:', 'Candidate declined offer');
-                    if (backoutReason === null) return; // User cancelled
-                }
-                
-                candidate.backoutDate = new Date().toISOString();
-                candidate.backoutReason = backoutReason;
-                
-                backoutCandidates.push(candidate);
-                candidates.splice(candidateIndex, 1);
-                
-                // Update vacancy counts
-                updateVacancyCounts();
-                
-                saveCandidates();
-                saveBackoutCandidates();
-                
-                renderCandidatesTable();
-                renderBackoutTable();
-                updateDashboard();
-                
-                // Send backout acknowledgment email
-                if (!fromAdd) {
-                    sendAutoEmail(candidate.email, candidate.name, 'backout');
-                    showNotification('Candidate moved to backout list', 'success');
-                }
-            }
-
-            // Update vacancy counts
-            function updateVacancyCounts() {
-                vacancies.forEach(vacancy => {
-                    const filledCount = candidates.filter(c => 
-                        c.applyFor === vacancy.designation && 
-                        (c.status === 'Selected' || c.status === 'Joined')
-                    ).length;
-                    
-                    vacancy.filled = filledCount;
-                    vacancy.remaining = vacancy.total - filledCount;
-                    vacancy.status = vacancy.remaining === 0 ? 'Filled' : 'Open';
-                });
-                
-                saveVacancies();
-                renderVacanciesTable();
-            }
-
-            // Update dashboard
-            function updateDashboard() {
-                const filteredCandidates = getFilteredCandidates();
-                
-                document.getElementById('totalCandidates').textContent = filteredCandidates.length;
-                document.getElementById('selectedCandidates').textContent = 
-                    filteredCandidates.filter(c => c.status === 'Selected' || c.status === 'Joined').length;
-                document.getElementById('backoutCandidates').textContent = backoutCandidates.length;
-                document.getElementById('pendingJoining').textContent = 
-                    filteredCandidates.filter(c => c.status === 'Selected' && !c.doj).length;
-                
-                const openVacancies = vacancies.reduce((sum, v) => sum + v.remaining, 0);
-                document.getElementById('openVacancies').textContent = openVacancies;
-            }
-
-            // Settings Management
-            function loadSettingsLists() {
-                // Load recruiters
-                const recruitersList = document.getElementById('recruitersList');
-                recruitersList.innerHTML = settings.recruiters.map(recruiter => `
-                    <div class="settings-item">
-                        <i class="fas fa-user"></i>
-                        <span>${recruiter}</span>
-                        <button onclick="removeRecruiter('${recruiter}')">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                `).join('');
-                
-                // Load departments
-                const departmentsList = document.getElementById('departmentsList');
-                departmentsList.innerHTML = settings.departments.map(dept => `
-                    <div class="settings-item">
-                        <i class="fas fa-building"></i>
-                        <span>${dept}</span>
-                        <button onclick="removeDepartment('${dept}')">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                `).join('');
-                
-                // Load designations
-                const designationsList = document.getElementById('designationsList');
-                designationsList.innerHTML = settings.designations.map(desig => `
-                    <div class="settings-item">
-                        <i class="fas fa-user-tag"></i>
-                        <span>${desig}</span>
-                        <button onclick="removeDesignation('${desig}')">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                `).join('');
-                
-                // Load statuses
-                const statusesList = document.getElementById('statusesList');
-                statusesList.innerHTML = settings.statuses.map(status => `
-                    <div class="settings-item">
-                        <i class="fas fa-exchange-alt"></i>
-                        <span>${status}</span>
-                        <button onclick="removeStatus('${status}')">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                `).join('');
-                
-                // Load locations
-                const locationsList = document.getElementById('locationsList');
-                locationsList.innerHTML = settings.locations.map(location => `
-                    <div class="settings-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>${location}</span>
-                        <button onclick="removeLocation('${location}')">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                `).join('');
-            }
-
-            function addRecruiter() {
-                const input = document.getElementById('newRecruiter');
-                const recruiter = input.value.trim();
-                
-                if (recruiter && !settings.recruiters.includes(recruiter)) {
-                    settings.recruiters.push(recruiter);
-                    saveSettings();
-                    loadSettingsLists();
-                    updateFilters();
-                    input.value = '';
-                    showNotification(`Recruiter "${recruiter}" added`, 'success');
-                } else if (settings.recruiters.includes(recruiter)) {
-                    showNotification('Recruiter already exists!', 'error');
-                }
-            }
-
-            function removeRecruiter(recruiter) {
-                if (confirm(`Remove recruiter "${recruiter}"?`)) {
-                    const index = settings.recruiters.indexOf(recruiter);
-                    if (index > -1) {
-                        settings.recruiters.splice(index, 1);
-                        saveSettings();
-                        loadSettingsLists();
-                        updateFilters();
-                        showNotification(`Recruiter "${recruiter}" removed`, 'success');
-                    }
-                }
-            }
-
-            function addDepartment() {
-                const input = document.getElementById('newDepartment');
-                const department = input.value.trim();
-                
-                if (department && !settings.departments.includes(department)) {
-                    settings.departments.push(department);
-                    saveSettings();
-                    loadSettingsLists();
-                    updateFilters();
-                    input.value = '';
-                    showNotification(`Department "${department}" added`, 'success');
-                } else if (settings.departments.includes(department)) {
-                    showNotification('Department already exists!', 'error');
-                }
-            }
-
-            function removeDepartment(department) {
-                if (confirm(`Remove department "${department}"?`)) {
-                    const index = settings.departments.indexOf(department);
-                    if (index > -1) {
-                        settings.departments.splice(index, 1);
-                        saveSettings();
-                        loadSettingsLists();
-                        updateFilters();
-                        showNotification(`Department "${department}" removed`, 'success');
-                    }
-                }
-            }
-
-            function addDesignation() {
-                const input = document.getElementById('newDesignation');
-                const designation = input.value.trim();
-                
-                if (designation && !settings.designations.includes(designation)) {
-                    settings.designations.push(designation);
-                    saveSettings();
-                    loadSettingsLists();
-                    updateFilters();
-                    input.value = '';
-                    showNotification(`Designation "${designation}" added`, 'success');
-                } else if (settings.designations.includes(designation)) {
-                    showNotification('Designation already exists!', 'error');
-                }
-            }
-
-            function removeDesignation(designation) {
-                if (confirm(`Remove designation "${designation}"?`)) {
-                    const index = settings.designations.indexOf(designation);
-                    if (index > -1) {
-                        settings.designations.splice(index, 1);
-                        saveSettings();
-                        loadSettingsLists();
-                        updateFilters();
-                        showNotification(`Designation "${designation}" removed`, 'success');
-                    }
-                }
-            }
-
-            function addStatus() {
-                const input = document.getElementById('newStatus');
-                const status = input.value.trim();
-                
-                if (status && !settings.statuses.includes(status)) {
-                    settings.statuses.push(status);
-                    saveSettings();
-                    loadSettingsLists();
-                    updateFilters();
-                    input.value = '';
-                    showNotification(`Status "${status}" added`, 'success');
-                } else if (settings.statuses.includes(status)) {
-                    showNotification('Status already exists!', 'error');
-                }
-            }
-
-            function removeStatus(status) {
-                if (confirm(`Remove status "${status}"?`)) {
-                    const index = settings.statuses.indexOf(status);
-                    if (index > -1) {
-                        settings.statuses.splice(index, 1);
-                        saveSettings();
-                        loadSettingsLists();
-                        updateFilters();
-                        showNotification(`Status "${status}" removed`, 'success');
-                    }
-                }
-            }
-
-            function addLocation() {
-                const input = document.getElementById('newLocation');
-                const location = input.value.trim();
-                
-                if (location && !settings.locations.includes(location)) {
-                    settings.locations.push(location);
-                    saveSettings();
-                    loadSettingsLists();
-                    updateFilters();
-                    input.value = '';
-                    showNotification(`Location "${location}" added`, 'success');
-                } else if (settings.locations.includes(location)) {
-                    showNotification('Location already exists!', 'error');
-                }
-            }
-
-            function removeLocation(location) {
-                if (confirm(`Remove location "${location}"?`)) {
-                    const index = settings.locations.indexOf(location);
-                    if (index > -1) {
-                        settings.locations.splice(index, 1);
-                        saveSettings();
-                        loadSettingsLists();
-                        updateFilters();
-                        showNotification(`Location "${location}" removed`, 'success');
-                    }
-                }
-            }
-
-            // Email functionality
-            function sendEmailModal(email, name) {
-                document.getElementById('emailTo').value = email;
-                document.getElementById('emailModal').style.display = 'block';
-                updateEmailTemplate();
-            }
-
-            function updateEmailTemplate() {
-                const emailType = document.getElementById('emailType').value;
-                const email = document.getElementById('emailTo').value;
-                const name = email.split('@')[0];
-                let subject = '';
-                let message = '';
-                
-                switch(emailType) {
-                    case 'selected':
-                        subject = 'Congratulations! You have been selected';
-                        message = `Dear ${name},\n\nCongratulations! We are pleased to inform you that you have been selected for the position.\n\nPlease let us know your availability for further discussion regarding the offer.\n\nBest regards,\nHR Team`;
-                        break;
-                    case 'rejected':
-                        subject = 'Regarding Your Application';
-                        message = `Dear ${name},\n\nThank you for your interest in our company and for taking the time to interview with us.\n\nAfter careful consideration, we have decided to move forward with other candidates whose qualifications more closely match our current needs.\n\nWe wish you the best in your job search.\n\nBest regards,\nHR Team`;
-                        break;
-                    case 'joining':
-                        subject = 'Joining Details and Documents Required';
-                        const candidate = candidates.find(c => c.email === email);
-                        const doj = candidate && candidate.doj ? new Date(candidate.doj).toLocaleDateString() : '[Date]';
-                        const location = candidate && candidate.location ? candidate.location : '[Location]';
-                        message = `Dear ${name},\n\nWe are delighted to have you onboard!\n\nPlease find below your joining details:\nDate: ${doj}\nTime: 9:00 AM\nLocation: ${location}\n\nDocuments required:\n1. Resume\n2. Educational certificates\n3. Previous employment certificates\n4. ID proof (Aadhar/PAN/Passport)\n5. Passport size photos (2 copies)\n6. Bank account details\n\nPlease report to the reception on your joining date.\n\nBest regards,\nHR Team`;
-                        break;
-                    case 'backout':
-                        subject = 'Acknowledgment of Withdrawal';
-                        message = `Dear ${name},\n\nWe acknowledge your decision to withdraw from the selection process.\n\nWe appreciate your interest in our organization and wish you the best in your future endeavors.\n\nBest regards,\nHR Team`;
-                        break;
-                }
-                
-                document.getElementById('emailSubject').value = subject;
-                document.getElementById('emailMessage').value = message;
-            }
-
-            function sendEmail() {
-                const to = document.getElementById('emailTo').value;
-                const subject = document.getElementById('emailSubject').value;
-                const message = document.getElementById('emailMessage').value;
-                
-                // Using mailto link for demo (in real app, use EmailJS or backend)
-                const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-                window.open(mailtoLink);
-                
-                showNotification('Email client opened. Click send to send the email.', 'info');
-                closeModal('emailModal');
-            }
-
-            function sendAutoEmail(email, name, type) {
-                let subject = '';
-                let message = '';
-                
-                switch(type) {
-                    case 'selected':
-                        subject = 'Congratulations! You have been selected';
-                        message = `Dear ${name},\n\nCongratulations! We are pleased to inform you that you have been selected for the position.\n\nOur HR team will contact you shortly with the offer details.\n\nBest regards,\nHR Team`;
-                        break;
-                    case 'backout':
-                        subject = 'Acknowledgment of Withdrawal';
-                        message = `Dear ${name},\n\nWe acknowledge your decision to withdraw from the selection process.\n\nWe appreciate your interest in our organization and wish you the best in your future endeavors.\n\nBest regards,\nHR Team`;
-                        break;
-                }
-                
-                const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-                
-                // Show notification instead of automatically opening email client
-                showNotification(`${name} has been ${type}. Email template ready to send.`, 'info');
-            }
-
-            // Export to Excel
-            function exportToExcel() {
-                if (candidates.length === 0) {
-                    showNotification('No data to export!', 'error');
-                    return;
-                }
-                
-                // Create CSV content for candidates
-                let csv = 'S.No,Recruiter,Candidate Name,Email,Current Designation,Current CTC,Company,Apply For,Hike %,New CTC,Status,DOJ,Location\n';
-                
-                candidates.forEach((candidate, index) => {
-                    csv += `${index + 1},${candidate.recruiter},${candidate.name},${candidate.email},${candidate.currentDesignation},${candidate.currentCTC},${candidate.currentCompany},${candidate.applyFor},${candidate.hike || 0},${candidate.afterHikeCTC || ''},${candidate.status},${candidate.doj || ''},${candidate.location || ''}\n`;
-                });
-                
-                // Add vacancies data
-                csv += '\n\nVacancies Data\n';
-                csv += 'Company,Department,Designation,Total Vacancies,Filled,Remaining,Status,Location,Recruiter\n';
-                
-                vacancies.forEach(vacancy => {
-                    csv += `${vacancy.company},${vacancy.department},${vacancy.designation},${vacancy.total},${vacancy.filled},${vacancy.remaining},${vacancy.status},${vacancy.location},${vacancy.recruiter}\n`;
-                });
-                
-                // Create and download file
-                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-                const link = document.createElement('a');
-                const url = URL.createObjectURL(blob);
-                link.setAttribute('href', url);
-                link.setAttribute('download', `onboarding-tracker-${new Date().toISOString().split('T')[0]}.csv`);
-                link.style.visibility = 'hidden';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                
-                showNotification('Data exported successfully as CSV!', 'success');
-            }
-
-            // Charts
-            let vacancyChart, hiringChart, recruiterChart, statusChart;
-
-            function initializeCharts() {
-                const ctx1 = document.getElementById('vacancyChart').getContext('2d');
-                const ctx2 = document.getElementById('hiringChart').getContext('2d');
-                const ctx3 = document.getElementById('recruiterChart').getContext('2d');
-                const ctx4 = document.getElementById('statusChart').getContext('2d');
-                
-                vacancyChart = new Chart(ctx1, {
-                    type: 'pie',
-                    data: {
-                        labels: [],
-                        datasets: [{
-                            data: [],
-                            backgroundColor: ['#2ecc71', '#e74c3c', '#3498db', '#f39c12', '#9b59b6']
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            legend: {
-                                position: 'bottom'
-                            }
-                        }
-                    }
-                });
-                
-                hiringChart = new Chart(ctx2, {
-                    type: 'line',
-                    data: {
-                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                        datasets: [{
-                            label: 'Candidates Joined',
-                            data: Array(12).fill(0),
-                            borderColor: '#3498db',
-                            backgroundColor: 'rgba(52, 152, 219, 0.1)',
-                            fill: true,
-                            tension: 0.4
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
-                
-                recruiterChart = new Chart(ctx3, {
-                    type: 'bar',
-                    data: {
-                        labels: [],
-                        datasets: [{
-                            label: 'Candidates Placed',
-                            data: [],
-                            backgroundColor: '#2ecc71'
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
-                
-                statusChart = new Chart(ctx4, {
-                    type: 'doughnut',
-                    data: {
-                        labels: [],
-                        datasets: [{
-                            data: [],
-                            backgroundColor: ['#2ecc71', '#3498db', '#f39c12', '#e74c3c', '#9b59b6', '#95a5a6']
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            legend: {
-                                position: 'bottom'
-                            }
-                        }
-                    }
-                });
-                
-                updateCharts();
-            }
-
-            function updateCharts() {
-                // Update vacancy chart
-                const vacancyStatus = vacancies.reduce((acc, v) => {
-                    acc[v.status] = (acc[v.status] || 0) + 1;
-                    return acc;
-                }, {});
-                
-                vacancyChart.data.labels = Object.keys(vacancyStatus);
-                vacancyChart.data.datasets[0].data = Object.values(vacancyStatus);
-                vacancyChart.update();
-                
-                // Update hiring trend chart
-                const monthlyData = Array(12).fill(0);
-                candidates.forEach(c => {
-                    if (c.doj) {
-                        const month = new Date(c.doj).getMonth();
-                        monthlyData[month]++;
-                    }
-                });
-                hiringChart.data.datasets[0].data = monthlyData;
-                hiringChart.update();
-                
-                // Update recruiter chart
-                const recruiterData = {};
-                candidates.forEach(c => {
-                    if (c.status === 'Selected' || c.status === 'Joined') {
-                        recruiterData[c.recruiter] = (recruiterData[c.recruiter] || 0) + 1;
-                    }
-                });
-                
-                recruiterChart.data.labels = Object.keys(recruiterData);
-                recruiterChart.data.datasets[0].data = Object.values(recruiterData);
-                recruiterChart.update();
-                
-                // Update status chart
-                const statusData = {};
-                candidates.forEach(c => {
-                    statusData[c.status] = (statusData[c.status] || 0) + 1;
-                });
-                
-                statusChart.data.labels = Object.keys(statusData);
-                statusChart.data.datasets[0].data = Object.values(statusData);
-                statusChart.update();
-            }
-
-            // Edit functions
-            function editCandidate(id) {
-                const candidate = candidates.find(c => c.id === id);
-                if (candidate) {
-                    // Populate modal with candidate data
-                    document.getElementById('recruiterName').value = candidate.recruiter;
-                    document.getElementById('candidateName').value = candidate.name;
-                    document.getElementById('candidateEmail').value = candidate.email;
-                    document.getElementById('currentDesignation').value = candidate.currentDesignation;
-                    document.getElementById('currentCTC').value = candidate.currentCTC;
-                    document.getElementById('hikePercentage').value = candidate.hike;
-                    document.getElementById('currentCompany').value = candidate.currentCompany;
-                    document.getElementById('companyLocation').value = candidate.companyLocation;
-                    document.getElementById('applyForDesignation').value = candidate.applyFor;
-                    document.getElementById('candidateStatus').value = candidate.status;
-                    document.getElementById('dateOfJoining').value = candidate.doj;
-                    document.getElementById('joinLocation').value = candidate.location;
-                    
-                    // Update filters and show modal
-                    updateFilters();
-                    document.getElementById('addCandidateModal').style.display = 'block';
-                    
-                    // Toggle DOJ field
-                    toggleDOJField();
-                    
-                    // Change button text
-                    const submitBtn = document.querySelector('#candidateForm button[type="submit"]');
-                    submitBtn.textContent = 'Update Candidate';
-                    submitBtn.onclick = function(e) {
-                        e.preventDefault();
-                        updateCandidate(id);
-                    };
-                    
-                    showNotification(`Editing candidate: ${candidate.name}`, 'info');
-                }
-            }
-
-            function updateCandidate(id) {
-                const candidateIndex = candidates.findIndex(c => c.id === id);
-                if (candidateIndex === -1) return;
-                
-                const oldStatus = candidates[candidateIndex].status;
-                const status = document.getElementById('candidateStatus').value;
-                const doj = document.getElementById('dateOfJoining').value;
-                
-                // Validate DOJ for Selected/Joined status
-                if ((status === 'Selected' || status === 'Joined') && !doj) {
-                    showNotification('Date of Joining is required for Selected/Joined status!', 'error');
-                    return;
-                }
-                
-                candidates[candidateIndex] = {
-                    id: id,
-                    recruiter: document.getElementById('recruiterName').value,
-                    name: document.getElementById('candidateName').value,
-                    email: document.getElementById('candidateEmail').value,
-                    currentDesignation: document.getElementById('currentDesignation').value,
-                    currentCTC: parseFloat(document.getElementById('currentCTC').value) || 0,
-                    currentCompany: document.getElementById('currentCompany').value,
-                    companyLocation: document.getElementById('companyLocation').value,
-                    applyFor: document.getElementById('applyForDesignation').value,
-                    hike: parseFloat(document.getElementById('hikePercentage').value) || 0,
-                    status: status,
-                    doj: status === 'Selected' || status === 'Joined' ? doj : '',
-                    location: document.getElementById('joinLocation').value,
-                    dateCreated: candidates[candidateIndex].dateCreated
-                };
-                
-                // Calculate after hike CTC
-                candidates[candidateIndex].afterHikeCTC = candidates[candidateIndex].currentCTC * 
-                    (1 + candidates[candidateIndex].hike / 100);
-                
-                // If status changed to/from Selected/Joined, update vacancies
-                if (oldStatus !== candidates[candidateIndex].status && 
-                    (oldStatus === 'Selected' || oldStatus === 'Joined' || 
-                     candidates[candidateIndex].status === 'Selected' || 
-                     candidates[candidateIndex].status === 'Joined')) {
-                    updateVacancyCounts();
-                }
-                
-                // If moved to backout
-                if (candidates[candidateIndex].status === 'Backout') {
-                    moveToBackout(id);
-                } else {
-                    saveCandidates();
-                    renderCandidatesTable();
-                    updateDashboard();
-                    updateFilters();
-                    closeModal('addCandidateModal');
-                    
-                    // Reset form button
-                    const submitBtn = document.querySelector('#candidateForm button[type="submit"]');
-                    submitBtn.textContent = 'Add Candidate';
-                    submitBtn.onclick = function(e) {
-                        e.preventDefault();
-                        addCandidate(e);
-                    };
-                    
-                    document.getElementById('candidateForm').reset();
-                    showNotification('Candidate updated successfully!', 'success');
-                }
-            }
-
-            function changeStatus(id) {
-                const candidate = candidates.find(c => c.id === id);
-                if (candidate) {
-                    const newStatus = prompt('Enter new status:', candidate.status);
-                    if (newStatus && newStatus !== candidate.status) {
-                        const oldStatus = candidate.status;
-                        
-                        // Check if DOJ is required
-                        let doj = candidate.doj;
-                        if ((newStatus === 'Selected' || newStatus === 'Joined') && !doj) {
-                            doj = prompt('Enter Date of Joining (YYYY-MM-DD):', new Date().toISOString().split('T')[0]);
-                            if (!doj) {
-                                showNotification('Date of Joining is required for Selected/Joined status!', 'error');
-                                return;
-                            }
-                        }
-                        
-                        candidate.status = newStatus;
-                        if ((newStatus === 'Selected' || newStatus === 'Joined') && doj) {
-                            candidate.doj = doj;
-                        }
-                        
-                        // Update vacancy counts if status changed to/from Selected/Joined
-                        if (oldStatus !== newStatus && 
-                            (oldStatus === 'Selected' || oldStatus === 'Joined' || 
-                             newStatus === 'Selected' || newStatus === 'Joined')) {
-                            updateVacancyCounts();
-                        }
-                        
-                        // If moved to backout
-                        if (newStatus === 'Backout') {
-                            moveToBackout(id);
-                        } else {
-                            saveCandidates();
-                            renderCandidatesTable();
-                            updateDashboard();
-                            showNotification(`Status updated to: ${newStatus}`, 'success');
-                        }
-                    }
-                }
-            }
-
-            function editVacancy(id) {
-                const vacancy = vacancies.find(v => v.id === id);
-                if (vacancy) {
-                    // Populate modal with vacancy data
-                    document.getElementById('vacancyCompany').value = vacancy.company;
-                    document.getElementById('vacancyDepartment').value = vacancy.department;
-                    document.getElementById('vacancyDesignation').value = vacancy.designation;
-                    document.getElementById('totalVacancies').value = vacancy.total;
-                    document.getElementById('vacancyLocation').value = vacancy.location;
-                    document.getElementById('vacancyRecruiter').value = vacancy.recruiter;
-                    
-                    // Update filters and show modal
-                    updateFilters();
-                    document.getElementById('addVacancyModal').style.display = 'block';
-                    
-                    // Change button text
-                    const submitBtn = document.querySelector('#vacancyForm button[type="submit"]');
-                    submitBtn.textContent = 'Update Vacancy';
-                    submitBtn.onclick = function(e) {
-                        e.preventDefault();
-                        updateVacancy(id);
-                    };
-                    
-                    showNotification(`Editing vacancy: ${vacancy.designation}`, 'info');
-                }
-            }
-
-            function updateVacancy(id) {
-                const vacancyIndex = vacancies.findIndex(v => v.id === id);
-                if (vacancyIndex === -1) return;
-                
-                vacancies[vacancyIndex] = {
-                    id: id,
-                    company: document.getElementById('vacancyCompany').value,
-                    department: document.getElementById('vacancyDepartment').value,
-                    designation: document.getElementById('vacancyDesignation').value,
-                    total: parseInt(document.getElementById('totalVacancies').value),
-                    filled: vacancies[vacancyIndex].filled,
-                    remaining: parseInt(document.getElementById('totalVacancies').value) - vacancies[vacancyIndex].filled,
-                    status: (parseInt(document.getElementById('totalVacancies').value) - vacancies[vacancyIndex].filled) === 0 ? 'Filled' : 'Open',
-                    location: document.getElementById('vacancyLocation').value,
-                    recruiter: document.getElementById('vacancyRecruiter').value || 'Not assigned',
-                    targetDate: vacancies[vacancyIndex].targetDate
-                };
-                
-                saveVacancies();
-                renderVacanciesTable();
-                updateDashboard();
-                updateFilters();
-                closeModal('addVacancyModal');
-                
-                // Reset form button
+                // Change button text
                 const submitBtn = document.querySelector('#vacancyForm button[type="submit"]');
-                submitBtn.textContent = 'Add Vacancy';
+                submitBtn.textContent = 'Update Vacancy';
                 submitBtn.onclick = function(e) {
                     e.preventDefault();
-                    addVacancy(e);
+                    updateVacancy(id);
                 };
                 
-                document.getElementById('vacancyForm').reset();
-                showNotification('Vacancy updated successfully!', 'success');
+                showNotification(`Editing vacancy: ${vacancy.designation}`, 'info');
             }
+        }
 
-            function deleteVacancy(id) {
-                if (confirm('Are you sure you want to delete this vacancy?')) {
-                    const index = vacancies.findIndex(v => v.id === id);
-                    if (index !== -1) {
-                        vacancies.splice(index, 1);
-                        saveVacancies();
-                        renderVacanciesTable();
-                        updateFilters();
-                        updateDashboard();
-                        showNotification('Vacancy deleted successfully!', 'success');
-                    }
+        function updateVacancy(id) {
+            const vacancyIndex = vacancies.findIndex(v => v.id === id);
+            if (vacancyIndex === -1) return;
+            
+            vacancies[vacancyIndex] = {
+                id: id,
+                company: document.getElementById('vacancyCompany').value,
+                department: document.getElementById('vacancyDepartment').value,
+                designation: document.getElementById('vacancyDesignation').value,
+                total: parseInt(document.getElementById('totalVacancies').value),
+                filled: vacancies[vacancyIndex].filled,
+                remaining: parseInt(document.getElementById('totalVacancies').value) - vacancies[vacancyIndex].filled,
+                status: (parseInt(document.getElementById('totalVacancies').value) - vacancies[vacancyIndex].filled) === 0 ? 'Filled' : 'Open',
+                location: document.getElementById('vacancyLocation').value,
+                recruiter: document.getElementById('vacancyRecruiter').value || 'Not assigned',
+                targetDate: vacancies[vacancyIndex].targetDate
+            };
+            
+            saveVacancies();
+            renderVacanciesTable();
+            updateDashboard();
+            updateFilters();
+            closeModal('addVacancyModal');
+            
+            // Reset form button
+            const submitBtn = document.querySelector('#vacancyForm button[type="submit"]');
+            submitBtn.textContent = 'Add Vacancy';
+            submitBtn.onclick = function(e) {
+                e.preventDefault();
+                addVacancy(e);
+            };
+            
+            document.getElementById('vacancyForm').reset();
+            showNotification('Vacancy updated successfully!', 'success');
+        }
+
+        function deleteVacancy(id) {
+            if (confirm('Are you sure you want to delete this vacancy?')) {
+                const index = vacancies.findIndex(v => v.id === id);
+                if (index !== -1) {
+                    vacancies.splice(index, 1);
+                    saveVacancies();
+                    renderVacanciesTable();
+                    updateFilters();
+                    updateDashboard();
+                    showNotification('Vacancy deleted successfully!', 'success');
                 }
             }
-
-            // Notification system
-            function showNotification(message, type = 'info') {
-                // Remove existing notifications
-                document.querySelectorAll('.notification').forEach(n => n.remove());
-                
-                const notification = document.createElement('div');
-                notification.className = `notification ${type}`;
-                notification.innerHTML = `
-                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : type === 'warning' ? 'exclamation-triangle' : 'info-circle'}"></i>
-                    ${message}
-                `;
-                
-                document.body.appendChild(notification);
-                
-                // Auto-remove after 5 seconds
-                setTimeout(() => {
-                    notification.style.opacity = '0';
-                    notification.style.transform = 'translateX(100%)';
-                    setTimeout(() => notification.remove(), 300);
-                }, 5000);
-            }
-
-            // Initialize charts after page load
-            window.onload = function() {
-                setTimeout(initializeCharts, 500);
-            };
         }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            document.querySelectorAll('.notification').forEach(n => n.remove());
+            
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : type === 'warning' ? 'exclamation-triangle' : 'info-circle'}"></i>
+                ${message}
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => notification.remove(), 300);
+            }, 5000);
+        }
+
+        // Initialize charts after page load
+        window.onload = function() {
+            setTimeout(initializeCharts, 500);
+        };
     </script>
-
-    <style>
-        /* Shake animation for login error */
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-            20%, 40%, 60%, 80% { transform: translateX(5px); }
-        }
-    </style>
 </body>
 </html>
